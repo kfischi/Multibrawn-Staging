@@ -1,0 +1,391 @@
+/* Header.module.css */
+
+.header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: rgba(255, 255, 255, 0.95);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.scrolled {
+  box-shadow: 0 2px 20px rgba(0, 0, 0, 0.1);
+  background: rgba(255, 255, 255, 0.98);
+}
+
+.container {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 1rem 2rem;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+
+/* Logo Container */
+.logoLink {
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  flex-shrink: 0;
+}
+
+.logoContainer {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  max-width: 100px;
+  height: auto;
+  background: transparent;
+}
+
+.logo img {
+  width: 100%;
+  height: auto;
+  max-width: 100px !important;
+  object-fit: contain;
+  background: transparent !important;
+  mix-blend-mode: multiply;
+}
+
+.brandName {
+  font-size: 1.5rem;
+  font-weight: 800;
+  background: linear-gradient(135deg, #06b6d4 0%, #8b5cf6 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+  letter-spacing: 0.5px;
+  white-space: nowrap;
+}
+
+/* Desktop Navigation */
+.desktopNav {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+}
+
+.navLink {
+  color: #1a202c;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1rem;
+  padding: 0.5rem 0;
+  position: relative;
+  transition: color 0.3s ease;
+}
+
+.navLink::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  width: 0;
+  height: 2px;
+  background: linear-gradient(90deg, #06b6d4, #8b5cf6);
+  transition: width 0.3s ease;
+}
+
+.navLink:hover {
+  color: #06b6d4;
+}
+
+.navLink:hover::after {
+  width: 100%;
+}
+
+.navLink.active {
+  color: #06b6d4;
+  font-weight: 600;
+}
+
+.navLink.active::after {
+  width: 100%;
+}
+
+/* Header Actions (WhatsApp + Hamburger) */
+.headerActions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* WhatsApp Button */
+.whatsappButton {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.625rem 1.25rem;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 25px;
+  font-weight: 600;
+  font-size: 0.95rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.whatsappButton:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+.whatsappButton svg {
+  flex-shrink: 0;
+}
+
+.whatsappText {
+  white-space: nowrap;
+}
+
+/* Mobile Hamburger */
+.hamburger {
+  display: none;
+  flex-direction: column;
+  gap: 5px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 0.5rem;
+  z-index: 1001;
+}
+
+.line {
+  width: 25px;
+  height: 3px;
+  background: #1a202c;
+  transition: all 0.3s ease;
+  border-radius: 2px;
+}
+
+.line.lineOpen:nth-child(1) {
+  transform: rotate(45deg) translate(8px, 8px);
+}
+
+.line.lineOpen:nth-child(2) {
+  opacity: 0;
+}
+
+.line.lineOpen:nth-child(3) {
+  transform: rotate(-45deg) translate(7px, -7px);
+}
+
+/* Mobile Menu */
+.mobileMenu {
+  display: none;
+  position: fixed;
+  top: 70px;
+  right: -100%;
+  width: 280px;
+  height: calc(100vh - 70px);
+  background: white;
+  box-shadow: -2px 0 20px rgba(0, 0, 0, 0.1);
+  transition: right 0.3s ease;
+  z-index: 999;
+}
+
+.mobileMenu.mobileMenuOpen {
+  right: 0;
+}
+
+.mobileNav {
+  display: flex;
+  flex-direction: column;
+  padding: 2rem 1.5rem;
+  gap: 0.5rem;
+}
+
+.mobileNavLink {
+  color: #1a202c;
+  text-decoration: none;
+  font-weight: 500;
+  font-size: 1.1rem;
+  padding: 1rem;
+  border-radius: 8px;
+  transition: all 0.3s ease;
+  position: relative;
+}
+
+.mobileNavLink:hover {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.1), rgba(139, 92, 246, 0.1));
+  color: #06b6d4;
+}
+
+.mobileNavLink.active {
+  background: linear-gradient(135deg, rgba(6, 182, 212, 0.15), rgba(139, 92, 246, 0.15));
+  color: #06b6d4;
+  font-weight: 600;
+}
+
+/* WhatsApp in Mobile Menu */
+.mobileWhatsapp {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.75rem;
+  padding: 1rem;
+  background: linear-gradient(135deg, #25d366 0%, #128c7e 100%);
+  color: white;
+  text-decoration: none;
+  border-radius: 12px;
+  font-weight: 600;
+  font-size: 1rem;
+  margin-top: 1rem;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 12px rgba(37, 211, 102, 0.3);
+}
+
+.mobileWhatsapp:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 16px rgba(37, 211, 102, 0.4);
+}
+
+.overlay {
+  display: none;
+  position: fixed;
+  top: 70px;
+  left: 0;
+  width: 100%;
+  height: calc(100vh - 70px);
+  background: rgba(0, 0, 0, 0.5);
+  z-index: 998;
+}
+
+/* Tablet and Mobile */
+@media (max-width: 1024px) {
+  .desktopNav {
+    display: none;
+  }
+
+  .whatsappText {
+    display: none;
+  }
+
+  .whatsappButton {
+    padding: 0.625rem;
+    min-width: 44px;
+    justify-content: center;
+  }
+
+  .hamburger {
+    display: flex;
+  }
+
+  .mobileMenu {
+    display: block;
+  }
+
+  .overlay {
+    display: block;
+  }
+
+  .brandName {
+    font-size: 1.3rem;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding: 0.75rem 1rem;
+  }
+
+  .logo {
+    max-width: 85px;
+  }
+
+  .logo img {
+    max-width: 85px !important;
+  }
+
+  .brandName {
+    font-size: 1.2rem;
+  }
+
+  .logoContainer {
+    gap: 0.5rem;
+  }
+
+  .whatsappButton {
+    padding: 0.5rem;
+    min-width: 40px;
+  }
+
+  .whatsappButton svg {
+    width: 18px;
+    height: 18px;
+  }
+
+  .mobileMenu {
+    top: 60px;
+    height: calc(100vh - 60px);
+  }
+
+  .overlay {
+    top: 60px;
+    height: calc(100vh - 60px);
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0.5rem 1rem;
+    gap: 0.75rem;
+  }
+
+  .logo {
+    max-width: 70px;
+  }
+
+  .logo img {
+    max-width: 70px !important;
+  }
+
+  .brandName {
+    font-size: 1rem;
+  }
+
+  .logoContainer {
+    gap: 0.4rem;
+  }
+
+  .whatsappButton {
+    padding: 0.5rem;
+    min-width: 38px;
+  }
+
+  .whatsappButton svg {
+    width: 16px;
+    height: 16px;
+  }
+
+  .mobileMenu {
+    width: 100%;
+    right: -100%;
+  }
+
+  .mobileNav {
+    padding: 1.5rem 1rem;
+  }
+
+  .mobileNavLink {
+    font-size: 1rem;
+    padding: 0.875rem;
+  }
+
+  .mobileWhatsapp {
+    font-size: 0.95rem;
+    padding: 0.875rem;
+  }
+}

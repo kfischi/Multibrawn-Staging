@@ -1,0 +1,132 @@
+/* Footer - Compact & Clean (3 lines max!) */
+
+.footer {
+  background: linear-gradient(135deg, #1a0b2e 0%, #2d1b4e 100%);
+  color: white;
+  padding: 2rem 0;
+  margin-top: auto;
+}
+
+.container {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 2rem;
+}
+
+/* שורה 1: Social + Links */
+.top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding-bottom: 1.5rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* Social Media Icons */
+.social {
+  display: flex;
+  gap: 1rem;
+}
+
+.social a {
+  width: 36px;
+  height: 36px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  color: white;
+  transition: all 0.3s ease;
+}
+
+.social a:hover {
+  background: linear-gradient(135deg, #FF5EA1 0%, #A06BFF 100%);
+  transform: translateY(-3px);
+}
+
+/* Quick Links */
+.links {
+  display: flex;
+  gap: 1.5rem;
+  flex-wrap: wrap;
+}
+
+.links a {
+  color: rgba(255, 255, 255, 0.8);
+  text-decoration: none;
+  font-size: 0.9rem;
+  transition: color 0.3s ease;
+}
+
+.links a:hover {
+  color: #FF5EA1;
+}
+
+/* שורה 2: Copyright */
+.bottom {
+  padding-top: 1.5rem;
+  text-align: center;
+}
+
+.bottom p {
+  margin: 0;
+  font-size: 0.9rem;
+  color: rgba(255, 255, 255, 0.7);
+  line-height: 1.5;
+}
+
+.bottom strong {
+  color: white;
+  font-weight: 700;
+  background: linear-gradient(135deg, #00E0FF 0%, #A06BFF 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Mobile Responsive */
+@media (max-width: 768px) {
+  .footer {
+    padding: 1.5rem 0;
+  }
+
+  .top {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 1rem;
+    padding-bottom: 1rem;
+  }
+
+  .social {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .links {
+    width: 100%;
+    justify-content: center;
+    gap: 1rem;
+    font-size: 0.85rem;
+  }
+
+  .bottom p {
+    font-size: 0.85rem;
+    line-height: 1.6;
+  }
+}
+
+/* RTL Support */
+[dir="rtl"] .top {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .social {
+  flex-direction: row-reverse;
+}
+
+[dir="rtl"] .links {
+  flex-direction: row-reverse;
+}

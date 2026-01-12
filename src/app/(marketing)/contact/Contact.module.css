@@ -1,0 +1,555 @@
+/* Contact Page Styles - WITH PROFESSIONAL CONTENT */
+
+.container {
+  min-height: 100vh;
+  padding-top: 90px;
+}
+
+/* Hero */
+.hero {
+  padding: 80px 24px 60px;
+  text-align: center;
+  background: linear-gradient(135deg, #00E0FF 0%, #2D7FFF 50%, #A06BFF 100%);
+}
+
+.heroContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.heroTitle {
+  font-size: 48px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 16px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.heroSubtitle {
+  font-size: 20px;
+  color: white;
+  opacity: 0.95;
+  text-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Main Content */
+.mainContent {
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 80px 24px;
+}
+
+.contentGrid {
+  display: grid;
+  grid-template-columns: 1.2fr 1fr;
+  gap: 60px;
+  align-items: start;
+}
+
+/* Info Section */
+.infoSection {
+  display: flex;
+  flex-direction: column;
+  gap: 40px;
+}
+
+.sectionTitle {
+  font-size: 36px;
+  font-weight: 700;
+  color: #1a0b2e;
+  margin-bottom: 16px;
+}
+
+.introText {
+  background: linear-gradient(135deg, rgba(0, 224, 255, 0.05) 0%, rgba(160, 107, 255, 0.05) 100%);
+  border-right: 4px solid #00E0FF;
+  padding: 24px;
+  border-radius: 12px;
+}
+
+.introText p {
+  font-size: 17px;
+  color: #1e293b;
+  line-height: 1.8;
+  margin-bottom: 16px;
+}
+
+.introText p:last-child {
+  margin-bottom: 0;
+}
+
+.introText strong {
+  color: #1a0b2e;
+  font-weight: 700;
+}
+
+/* Contact Methods */
+.methods {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.methodsTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a0b2e;
+  margin-bottom: 8px;
+}
+
+.method {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  padding: 24px;
+  background: white;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+  transition: all 0.3s ease;
+  text-decoration: none;
+  color: inherit;
+}
+
+.method:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 8px 30px rgba(0, 224, 255, 0.2);
+}
+
+.methodIcon {
+  width: 64px;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #00E0FF 0%, #2D7FFF 50%, #A06BFF 100%);
+  border-radius: 16px;
+  color: white;
+  flex-shrink: 0;
+}
+
+.methodText h4 {
+  font-size: 20px;
+  font-weight: 700;
+  color: #1a0b2e;
+  margin-bottom: 4px;
+}
+
+.methodText p {
+  font-size: 18px;
+  color: #2D7FFF;
+  font-weight: 600;
+  direction: ltr;
+  text-align: right;
+}
+
+/* Working Hours */
+.hours {
+  background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+  padding: 32px;
+  border-radius: 16px;
+}
+
+.hoursTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a0b2e;
+  margin-bottom: 20px;
+}
+
+.hoursList {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 20px 0;
+}
+
+.hoursList li {
+  font-size: 17px;
+  color: #1e293b;
+  padding: 12px 0;
+  border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+}
+
+.hoursList li:last-child {
+  border-bottom: none;
+}
+
+.hoursList strong {
+  color: #1a0b2e;
+  font-weight: 700;
+}
+
+.hoursNote {
+  background: rgba(255, 94, 161, 0.1);
+  color: #FF5EA1;
+  padding: 16px;
+  border-radius: 12px;
+  font-size: 15px;
+  margin: 0;
+}
+
+.hoursNote strong {
+  font-weight: 700;
+}
+
+/* Why Contact */
+.whyContact {
+  background: white;
+  padding: 32px;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
+}
+
+.whyTitle {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a0b2e;
+  margin-bottom: 20px;
+}
+
+.whyList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+.whyList li {
+  font-size: 16px;
+  color: #1e293b;
+  line-height: 1.6;
+}
+
+.whyList strong {
+  color: #1a0b2e;
+  font-weight: 700;
+}
+
+/* Chat Section */
+.chatSection {
+  position: sticky;
+  top: 120px;
+}
+
+.chatPlaceholder {
+  background: linear-gradient(135deg, rgba(255, 94, 161, 0.1) 0%, rgba(160, 107, 255, 0.1) 100%);
+  border: 2px dashed #FF5EA1;
+  border-radius: 20px;
+  padding: 48px 32px;
+  text-align: center;
+}
+
+.chatIcon {
+  width: 80px;
+  height: 80px;
+  margin: 0 auto 24px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #FF5EA1 0%, #A06BFF 100%);
+  border-radius: 50%;
+  color: white;
+}
+
+.chatPlaceholder h3 {
+  font-size: 24px;
+  font-weight: 700;
+  color: #1a0b2e;
+  margin-bottom: 16px;
+}
+
+.chatPlaceholder p {
+  font-size: 16px;
+  color: #1e293b;
+  line-height: 1.6;
+  margin-bottom: 24px;
+}
+
+.chatArrow {
+  animation: bounce 2s ease-in-out infinite;
+  color: #FF5EA1;
+}
+
+@keyframes bounce {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(12px);
+  }
+}
+
+/* CTA Section */
+.cta {
+  background: linear-gradient(135deg, #00E0FF 0%, #2D7FFF 50%, #A06BFF 100%);
+  padding: 80px 24px;
+  text-align: center;
+}
+
+.ctaContent {
+  max-width: 800px;
+  margin: 0 auto;
+}
+
+.ctaContent h2 {
+  font-size: 36px;
+  font-weight: 800;
+  color: white;
+  margin-bottom: 16px;
+  text-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+
+.ctaContent p {
+  font-size: 18px;
+  color: white;
+  opacity: 0.95;
+  margin-bottom: 32px;
+}
+
+.ctaButtons {
+  display: flex;
+  gap: 16px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.ctaButton,
+.ctaButtonSecondary {
+  padding: 16px 40px;
+  font-size: 18px;
+  font-weight: 700;
+  border-radius: 50px;
+  text-decoration: none;
+  transition: all 0.3s ease;
+  display: inline-block;
+}
+
+.ctaButton {
+  background: white;
+  color: #FF5EA1;
+}
+
+.ctaButton:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgba(255, 255, 255, 0.3);
+}
+
+.ctaButtonSecondary {
+  background: rgba(255, 255, 255, 0.2);
+  color: white;
+  border: 2px solid white;
+}
+
+.ctaButtonSecondary:hover {
+  background: rgba(255, 255, 255, 0.3);
+  transform: translateY(-4px);
+}
+
+/* Mobile */
+@media (max-width: 1024px) {
+  .contentGrid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .chatSection {
+    position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .container {
+    padding-top: 70px;
+  }
+
+  .hero {
+    padding: 60px 20px 40px;
+  }
+
+  .heroTitle {
+    font-size: 32px;
+  }
+
+  .heroSubtitle {
+    font-size: 16px;
+  }
+
+  .mainContent {
+    padding: 60px 20px;
+  }
+
+  .sectionTitle {
+    font-size: 28px;
+  }
+
+  .introText {
+    padding: 20px;
+  }
+
+  .introText p {
+    font-size: 15px;
+  }
+
+  .methodsTitle,
+  .hoursTitle,
+  .whyTitle {
+    font-size: 20px;
+  }
+
+  .method {
+    padding: 20px;
+    gap: 16px;
+  }
+
+  .methodIcon {
+    width: 56px;
+    height: 56px;
+  }
+
+  .methodIcon svg {
+    width: 28px;
+    height: 28px;
+  }
+
+  .methodText h4 {
+    font-size: 18px;
+  }
+
+  .methodText p {
+    font-size: 16px;
+  }
+
+  .hours {
+    padding: 24px;
+  }
+
+  .hoursList li {
+    font-size: 15px;
+  }
+
+  .whyContact {
+    padding: 24px;
+  }
+
+  .whyList li {
+    font-size: 15px;
+  }
+
+  .chatPlaceholder {
+    padding: 32px 24px;
+  }
+
+  .chatIcon {
+    width: 64px;
+    height: 64px;
+  }
+
+  .chatPlaceholder h3 {
+    font-size: 20px;
+  }
+
+  .chatPlaceholder p {
+    font-size: 15px;
+  }
+
+  .cta {
+    padding: 60px 20px;
+  }
+
+  .ctaContent h2 {
+    font-size: 28px;
+  }
+
+  .ctaContent p {
+    font-size: 16px;
+  }
+
+  .ctaButtons {
+    flex-direction: column;
+    gap: 12px;
+  }
+
+  .ctaButton,
+  .ctaButtonSecondary {
+    padding: 14px 32px;
+    font-size: 16px;
+    width: 100%;
+  }
+}
+
+/* AI Bot Card */
+.aiBotCard {
+  background: linear-gradient(135deg, rgba(0, 224, 255, 0.08), rgba(160, 107, 255, 0.08));
+  border: 2px solid var(--color-pink);
+  border-radius: 20px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  text-align: center;
+}
+
+.aiBotHeader {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.aiBotIcon {
+  width: 70px;
+  height: 70px;
+  background: white;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+}
+
+.aiBotIcon svg {
+  stroke: var(--color-pink);
+}
+
+.aiBotCard h3 {
+  font-size: 1.8rem;
+  font-weight: 800;
+  color: var(--color-text-primary);
+  margin: 0;
+}
+
+.aiBotText {
+  font-size: 1.1rem;
+  color: var(--color-text-secondary);
+  line-height: 1.6;
+  margin-bottom: 1.5rem;
+}
+
+.aiBotButton {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.8rem;
+  padding: 1rem 2rem;
+  background: var(--gradient-primary);
+  color: white;
+  font-size: 1.1rem;
+  font-weight: 700;
+  border: none;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 8px 20px rgba(0, 224, 255, 0.3);
+}
+
+.aiBotButton:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 12px 30px rgba(0, 224, 255, 0.4);
+}
+
+.aiBotButton svg {
+  transition: transform 0.3s ease;
+}
+
+.aiBotButton:hover svg {
+  transform: translateX(-5px);
+}
