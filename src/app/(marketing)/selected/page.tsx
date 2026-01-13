@@ -50,7 +50,7 @@ const SelectedPage: React.FC = () => {
 
   // Filter properties
   const filteredProperties = useMemo(() => {
-    let filtered = selectedProperties as Property[];
+    let filtered = selectedProperties as unknown as Property[];
     
     if (activeFilter !== 'all') {
       filtered = filtered.filter(p => p.type === activeFilter);
@@ -65,7 +65,7 @@ const SelectedPage: React.FC = () => {
 
   // Featured properties
   const featuredProperties = useMemo(() => {
-    return (selectedProperties as Property[]).filter(p => p.featured);
+    return (selectedProperties as unknown as Property[]).filter(p => p.featured);
   }, []);
 
   return (
