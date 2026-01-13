@@ -270,10 +270,12 @@ const PropertyCard: React.FC<PropertyCardProps> = ({ property, featured = false 
         <div className={styles.cardRating}>
           <div className={styles.ratingStars}>
             <span className={styles.star}>⭐</span>
-            <span className={styles.ratingNumber}>{property.rating.toFixed(1)}</span>
+            <span className={styles.ratingNumber}>
+              {typeof property.rating === 'number' ? property.rating.toFixed(1) : '0.0'}
+            </span>
           </div>
           <span className={styles.reviewsCount}>
-            ({property.reviewsCount} ביקורות)
+            ({property.reviewsCount || 0} ביקורות)
           </span>
         </div>
 
