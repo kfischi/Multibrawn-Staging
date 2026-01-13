@@ -26,6 +26,7 @@ export default function Header() {
 
   const navLinks = [
     { href: '/', label: 'בית' },
+    { href: '/selected', label: '⭐ המובחרים' },
     { href: '/gallery', label: 'גלריה' },
     { href: '/shabbat-hatan', label: 'שבת חתן' },
     { href: '/blog', label: 'בלוג' },
