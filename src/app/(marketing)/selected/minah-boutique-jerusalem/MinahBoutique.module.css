@@ -1,0 +1,582 @@
+/* Minah Boutique - Luxury Editorial Design */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@300;400;500;600;700&family=Urbanist:wght@300;400;500;600;700&display=swap');
+
+.container {
+  min-height: 100vh;
+  background: #FAFAF8;
+  font-family: 'Urbanist', sans-serif;
+  color: #1a1a1a;
+}
+
+/* Hero Section - Full Screen Editorial */
+.hero {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
+.heroImageContainer {
+  position: absolute;
+  inset: 0;
+  animation: slowZoom 20s ease-in-out infinite alternate;
+}
+
+@keyframes slowZoom {
+  from { transform: scale(1); }
+  to { transform: scale(1.05); }
+}
+
+.heroImage {
+  object-fit: cover;
+  filter: brightness(0.85) contrast(1.1);
+}
+
+.heroOverlay {
+  position: absolute;
+  inset: 0;
+  background: linear-gradient(
+    to bottom,
+    rgba(0, 0, 0, 0.2) 0%,
+    rgba(0, 0, 0, 0.4) 100%
+  );
+}
+
+.heroContent {
+  position: relative;
+  z-index: 10;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  padding: 0 5vw 15vh;
+  animation: fadeInUp 1.2s ease-out;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.heroText {
+  margin-bottom: 3rem;
+}
+
+.heroSubtitle {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.15em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.9);
+  margin-bottom: 1rem;
+  animation: fadeInUp 1.2s ease-out 0.2s both;
+}
+
+.heroTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(3.5rem, 8vw, 7rem);
+  font-weight: 300;
+  line-height: 1;
+  color: white;
+  margin: 0 0 1.5rem 0;
+  letter-spacing: -0.02em;
+  animation: fadeInUp 1.2s ease-out 0.4s both;
+}
+
+.heroTagline {
+  font-size: clamp(1rem, 2vw, 1.25rem);
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.95);
+  line-height: 1.6;
+  max-width: 600px;
+  animation: fadeInUp 1.2s ease-out 0.6s both;
+}
+
+.heroMeta {
+  display: flex;
+  gap: 2rem;
+  align-items: center;
+  flex-wrap: wrap;
+  animation: fadeInUp 1.2s ease-out 0.8s both;
+}
+
+.metaItem {
+  display: flex;
+  flex-direction: column;
+  gap: 0.25rem;
+}
+
+.metaLabel {
+  font-size: 0.75rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.metaValue {
+  font-size: 1rem;
+  font-weight: 400;
+  color: white;
+}
+
+.metaDivider {
+  width: 1px;
+  height: 2rem;
+  background: rgba(255, 255, 255, 0.3);
+}
+
+/* Gallery Navigation */
+.galleryNav {
+  position: absolute;
+  bottom: 3rem;
+  left: 5vw;
+  display: flex;
+  gap: 0.5rem;
+  z-index: 20;
+  animation: fadeInUp 1.2s ease-out 1s both;
+}
+
+.galleryThumb {
+  position: relative;
+  width: 80px;
+  height: 80px;
+  border: none;
+  background: none;
+  cursor: pointer;
+  overflow: hidden;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+  opacity: 0.6;
+}
+
+.galleryThumb::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border: 2px solid transparent;
+  transition: border-color 0.3s ease;
+  z-index: 1;
+}
+
+.galleryThumb:hover {
+  opacity: 0.9;
+  transform: translateY(-4px);
+}
+
+.galleryThumbActive {
+  opacity: 1;
+}
+
+.galleryThumbActive::before {
+  border-color: white;
+}
+
+/* Content */
+.content {
+  position: relative;
+  background: #FAFAF8;
+  padding: 0 5vw;
+}
+
+/* Introduction */
+.intro {
+  padding: 10rem 0 8rem;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.sectionHeading {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 5vw, 4rem);
+  font-weight: 300;
+  line-height: 1.2;
+  color: #1a1a1a;
+  margin: 0 0 3rem 0;
+  letter-spacing: -0.01em;
+}
+
+.introLead {
+  font-size: clamp(1.25rem, 2vw, 1.5rem);
+  font-weight: 300;
+  line-height: 1.7;
+  color: #2a2a2a;
+  margin-bottom: 2rem;
+}
+
+.introBody {
+  font-size: 1.125rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: #4a4a4a;
+}
+
+/* Features Grid */
+.features {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  gap: 3rem;
+  padding: 6rem 0;
+  max-width: 1400px;
+  margin: 0 auto;
+  border-top: 1px solid #e0e0e0;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.featureCard {
+  text-align: center;
+  padding: 2rem;
+}
+
+.featureIcon {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 3rem;
+  font-weight: 300;
+  color: #1a1a1a;
+  margin-bottom: 1.5rem;
+}
+
+.featureTitle {
+  font-size: 1.25rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0 0 0.75rem 0;
+}
+
+.featureText {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #6a6a6a;
+}
+
+/* Rooms Section */
+.rooms {
+  padding: 8rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.roomsList {
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+  margin-bottom: 4rem;
+}
+
+.roomCard {
+  padding: 2.5rem;
+  background: white;
+  border: 1px solid #e8e8e8;
+  transition: all 0.3s ease;
+}
+
+.roomCard:hover {
+  border-color: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 40px rgba(0, 0, 0, 0.05);
+}
+
+.roomHeader {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  margin-bottom: 1rem;
+  flex-wrap: wrap;
+  gap: 1rem;
+}
+
+.roomName {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 1.75rem;
+  font-weight: 400;
+  color: #1a1a1a;
+  margin: 0;
+}
+
+.roomPrice {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.roomDetails {
+  display: flex;
+  gap: 0.75rem;
+  font-size: 0.875rem;
+  color: #6a6a6a;
+  margin-bottom: 1rem;
+}
+
+.roomDesc {
+  font-size: 1rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #4a4a4a;
+}
+
+.wholeProp {
+  padding: 3rem;
+  background: #1a1a1a;
+  color: white;
+  text-align: center;
+}
+
+.wholePropTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: 2rem;
+  font-weight: 300;
+  margin: 0 0 1rem 0;
+}
+
+.wholePropPrice {
+  font-size: 1.5rem;
+  font-weight: 500;
+  margin: 0 0 1rem 0;
+}
+
+.wholePropDesc {
+  font-size: 1rem;
+  font-weight: 300;
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* Amenities */
+.amenities {
+  padding: 8rem 0;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-top: 1px solid #e0e0e0;
+}
+
+.amenitiesGrid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+  gap: 4rem;
+}
+
+.amenityGroup {
+}
+
+.amenityGroupTitle {
+  font-size: 1.125rem;
+  font-weight: 500;
+  color: #1a1a1a;
+  margin: 0 0 1.5rem 0;
+  padding-bottom: 0.75rem;
+  border-bottom: 1px solid #e0e0e0;
+}
+
+.amenityList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.amenityList li {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #4a4a4a;
+  padding-right: 1.5rem;
+  position: relative;
+}
+
+.amenityList li::before {
+  content: '—';
+  position: absolute;
+  right: 0;
+  color: #1a1a1a;
+}
+
+/* Location */
+.location {
+  padding: 8rem 0;
+  max-width: 900px;
+  margin: 0 auto;
+  border-top: 1px solid #e0e0e0;
+}
+
+.locationIntro {
+  font-size: 1.25rem;
+  font-weight: 300;
+  line-height: 1.6;
+  color: #4a4a4a;
+  margin-bottom: 3rem;
+}
+
+.attractionsList {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 1.5rem;
+}
+
+.attractionItem {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  padding: 1rem 0;
+  border-bottom: 1px solid #e8e8e8;
+}
+
+.attractionDistance {
+  font-size: 0.875rem;
+  font-weight: 500;
+  color: #1a1a1a;
+}
+
+.attractionName {
+  font-size: 1rem;
+  font-weight: 300;
+  color: #4a4a4a;
+}
+
+/* CTA Section */
+.cta {
+  padding: 10rem 0;
+  max-width: 800px;
+  margin: 0 auto;
+  text-align: center;
+  border-top: 1px solid #e0e0e0;
+}
+
+.ctaContent {
+  margin-bottom: 3rem;
+}
+
+.ctaTitle {
+  font-family: 'Cormorant Garamond', serif;
+  font-size: clamp(2.5rem, 5vw, 3.5rem);
+  font-weight: 300;
+  color: #1a1a1a;
+  margin: 0 0 1rem 0;
+}
+
+.ctaText {
+  font-size: 1.125rem;
+  font-weight: 300;
+  color: #4a4a4a;
+}
+
+.ctaButton {
+  display: inline-block;
+  padding: 1.25rem 3rem;
+  background: #1a1a1a;
+  color: white;
+  font-size: 1rem;
+  font-weight: 500;
+  text-decoration: none;
+  letter-spacing: 0.05em;
+  transition: all 0.3s ease;
+  border: 2px solid #1a1a1a;
+}
+
+.ctaButton:hover {
+  background: white;
+  color: #1a1a1a;
+  transform: translateY(-2px);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* Back Link */
+.backLink {
+  padding: 4rem 0 8rem;
+  text-align: center;
+}
+
+.backLink a {
+  font-size: 0.875rem;
+  font-weight: 500;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: #6a6a6a;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.backLink a:hover {
+  color: #1a1a1a;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .heroContent {
+    padding: 0 6vw 10vh;
+  }
+
+  .heroTitle {
+    font-size: 3rem;
+  }
+
+  .heroMeta {
+    gap: 1rem;
+  }
+
+  .metaDivider {
+    display: none;
+  }
+
+  .galleryNav {
+    display: none;
+  }
+
+  .intro {
+    padding: 6rem 0 4rem;
+  }
+
+  .features {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+    padding: 4rem 0;
+  }
+
+  .rooms {
+    padding: 4rem 0;
+  }
+
+  .roomCard {
+    padding: 1.5rem;
+  }
+
+  .roomHeader {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .wholeProp {
+    padding: 2rem;
+  }
+
+  .amenities {
+    padding: 4rem 0;
+  }
+
+  .amenitiesGrid {
+    grid-template-columns: 1fr;
+    gap: 2rem;
+  }
+
+  .location {
+    padding: 4rem 0;
+  }
+
+  .attractionsList {
+    grid-template-columns: 1fr;
+  }
+
+  .cta {
+    padding: 6rem 0;
+  }
+
+  .ctaButton {
+    width: 100%;
+  }
+}
