@@ -1,7 +1,192 @@
 [
   {
-    "slug": "pilot-1",
-    "title": "פיילוט ראשון",
-    "description": "תיאור קצר של הנכס הנבחר"
+    "id": "minah-boutique",
+    "slug": "minah-boutique-jerusalem",
+    "name": "מינה בוטיק",
+    "type": "hotel",
+    "location": "ירושלים",
+    "region": "jerusalem",
+    "heroImage": "https://res.cloudinary.com/decirk3zb/image/upload/v1768342965/R0011001_still_1229_793_iofh7c.webp",
+    "gallery": [
+      "https://res.cloudinary.com/decirk3zb/image/upload/v1768342964/R0011612_still_1229_793_vlfqkp.webp",
+      "https://res.cloudinary.com/decirk3zb/image/upload/v1768342965/R0011630_still_1229_793_cucngc.webp",
+      "https://res.cloudinary.com/decirk3zb/image/upload/v1768342964/R0011627_still_1229_793_jn6mw0.webp"
+    ],
+    "description": "מתחם בוטיק ייחודי במרכז ירושלים המציע שבעה סוויטות אדריכליות מעוצבות בקפידה. כל יחידה מספקת פרטיות מוחלטת, אווירה אינטימית ושקטה, ומיקום מושלם קרוב לכל האטרקציות המרכזיות של העיר העתיקה. המתחם משלב יוקרה עם נוחות, עיצוב מודרני עם חום, ומתאים במיוחד לזוגות, משפחות וקבוצות המחפשות חוויית אירוח מעולה בלב ירושלים.",
+    "highlights": [
+      "7 סוויטות מעוצבות עם פרטיות מוחלטת",
+      "מיקום מרכזי בירושלים קרוב לכל האטרקציות",
+      "2 חדרים עם ג'קוזי פרטי לחוויה רומנטית",
+      "התאמה מלאה לציבור שומר שבת וחגים",
+      "WiFi מהיר ונטפליקס בכל החדרים",
+      "מטבחים מאובזרים וממד בכל יחידה",
+      "בית כנסת ומקווה בהליכה קצרה",
+      "אפשרות להשכרת כל המתחם לקבוצות ואירועים"
+    ],
+    "capacity": 24,
+    "bedrooms": 7,
+    "bathrooms": 6,
+    "affiliateLink": "https://www.tzimer360.co.il/Location/C4653/?affiliate=yc",
+    "metaTitle": "מינה בוטיק ירושלים - 7 סוויטות בוטיק במרכז העיר | MULTIBRAWN",
+    "metaDescription": "מתחם בוטיק ייחודי במרכז ירושלים עם 7 סוויטות מעוצבות, מיקום מושלם, התאמה לשומרי שבת, ו-2 חדרים עם ג'קוזי פרטי. קרוב לעיר העתיקה והכותל.",
+    "keywords": [
+      "מינה בוטיק",
+      "מלון בוטיק ירושלים",
+      "צימר ירושלים",
+      "לינה ירושלים",
+      "סוויטות ירושלים",
+      "שומר שבת",
+      "ג'קוזי ירושלים"
+    ],
+    "featured": true,
+    "rating": 5.0,
+    "reviewsCount": 0
+  },
+  {
+    "id": "pilot-001",
+    "slug": "villa-paradise-galilee",
+    "name": "וילת פרדייס בגליל",
+    "type": "villa",
+    "location": "גליל עליון",
+    "region": "north",
+    "heroImage": "https://res.cloudinary.com/dptyfvwyo/image/upload/v1735000000/pilot/villa-paradise-hero.jpg",
+    "gallery": [
+      "https://res.cloudinary.com/dptyfvwyo/image/upload/v1735000001/pilot/villa-paradise-1.jpg",
+      "https://res.cloudinary.com/dptyfvwyo/image/upload/v1735000002/pilot/villa-paradise-2.jpg",
+      "https://res.cloudinary.com/dptyfvwyo/image/upload/v1735000003/pilot/villa-paradise-3.jpg",
+      "https://res.cloudinary.com/dptyfvwyo/image/upload/v1735000004/pilot/villa-paradise-4.jpg"
+    ],
+    "description": "וילת פרדייס בגליל - חוויית נופש יוקרתית ללא פשרות במיקום מדהים בגליל העליון. הוילה המפוארת משלבת בין עיצוב מודרני יוקרתי לבין נוף פנורמי עוצר נשימה של הרי הגליל והגולן.",
+    "highlights": [
+      "בריכה מחוממת פרטית 10X5 מטר",
+      "ג'קוזי ספא וסאונה פרטית",
+      "5 סוויטות שינה יוקרתיות",
+      "מטבח שף מאובזר",
+      "סלון ענק 80 מ\"ר עם נוף",
+      "חצר פרטית 500 מ\"ר"
+    ],
+    "capacity": 12,
+    "bedrooms": 5,
+    "bathrooms": 5,
+    "affiliateLink": "https://www.tzimer360.co.il/Location/C4675/?affiliate=yc",
+    "featured": true,
+    "rating": 4.9,
+    "reviewsCount": 127
+  },
+  {
+    "id": "pilot-002",
+    "slug": "romantic-zimmer-galilee",
+    "name": "צימר רומנטי ביער הגליל",
+    "type": "zimmer",
+    "location": "יער הגליל",
+    "region": "north",
+    "heroImage": "https://res.cloudinary.com/dptyfvwyo/image/upload/v1735000010/pilot/zimmer-romantic-hero.jpg",
+    "gallery": [
+      "https://res.cloudinary.com/dptyfvwyo/image/upload/v1735000011/pilot/zimmer-romantic-1.jpg",
+      "https://res.cloudinary.com/dptyfvwyo/image/upload/v1735000012/pilot/zimmer-romantic-2.jpg"
+    ],
+    "description": "צימר רומנטי ביער הגליל - מקום קסום ואינטימי לזוגות המחפשים חופשה רומנטית מושלמת בלב הטבע.",
+    "highlights": [
+      "ג'קוזי ספא פרטי",
+      "מיטת אפריון מלכותית",
+      "נוף פנורמי ליער",
+      "פרטיות מלאה",
+      "חצר פרטית",
+      "קמין מעוצב"
+    ],
+    "capacity": 2,
+    "bedrooms": 1,
+    "bathrooms": 1,
+    "affiliateLink": "https://www.tzimer360.co.il/Location/C4675/?affiliate=yc",
+    "featured": true,
+    "rating": 4.8,
+    "reviewsCount": 94
+  },
+  {
+    "id": "pilot-003",
+    "slug": "luxury-villa-kinneret",
+    "name": "וילת יוקרה על הכנרת",
+    "type": "villa",
+    "location": "כנרת",
+    "region": "north",
+    "heroImage": "https://res.cloudinary.com/dptyfvwyo/image/upload/v1735000020/pilot/villa-kinneret-hero.jpg",
+    "gallery": [
+      "https://res.cloudinary.com/dptyfvwyo/image/upload/v1735000021/pilot/villa-kinneret-1.jpg",
+      "https://res.cloudinary.com/dptyfvwyo/image/upload/v1735000022/pilot/villa-kinneret-2.jpg"
+    ],
+    "description": "וילת יוקרה ייחודית על חוף הכנרת עם גישה ישירה לחוף פרטי, בריכה מחוממת ונוף מרהיב.",
+    "highlights": [
+      "גישה ישירה לחוף הכנרת",
+      "בריכה מחוממת ענקית",
+      "4 סוויטות עם נוף לכנרת",
+      "סירה פרטית",
+      "מטבח חוץ מקצועי",
+      "חצר 600 מ\"ר"
+    ],
+    "capacity": 10,
+    "bedrooms": 4,
+    "bathrooms": 4,
+    "affiliateLink": "https://www.tzimer360.co.il/Location/C4675/?affiliate=yc",
+    "featured": false,
+    "rating": 4.8,
+    "reviewsCount": 103
+  },
+  {
+    "id": "pilot-004",
+    "slug": "luxury-apartment-tel-aviv",
+    "name": "פנטהאוז יוקרה בתל אביב",
+    "type": "apartment",
+    "location": "תל אביב - רוטשילד",
+    "region": "center",
+    "heroImage": "https://res.cloudinary.com/dptyfvwyo/image/upload/v1735000030/pilot/apartment-tlv-hero.jpg",
+    "gallery": [
+      "https://res.cloudinary.com/dptyfvwyo/image/upload/v1735000031/pilot/apartment-tlv-1.jpg",
+      "https://res.cloudinary.com/dptyfvwyo/image/upload/v1735000032/pilot/apartment-tlv-2.jpg"
+    ],
+    "description": "פנטהאוז יוקרה בלב תל אביב - חוויה אורבנית יוקרתית במיקום הכי מבוקש בעיר על שדרות רוטשילד.",
+    "highlights": [
+      "מיקום על רוטשילד",
+      "נוף 360° מקומה 18",
+      "מרפסת גג 80 מ\"ר",
+      "ג'קוזי חיצוני",
+      "3 חדרים עם חדרי רחצה",
+      "קונסיירז' 24/7"
+    ],
+    "capacity": 6,
+    "bedrooms": 3,
+    "bathrooms": 3,
+    "affiliateLink": "https://www.tzimer360.co.il/Location/C4675/?affiliate=yc",
+    "featured": false,
+    "rating": 4.7,
+    "reviewsCount": 82
+  },
+  {
+    "id": "pilot-005",
+    "slug": "boutique-hotel-jerusalem",
+    "name": "מלון בוטיק ירושלים העתיקה",
+    "type": "hotel",
+    "location": "ירושלים - העיר העתיקה",
+    "region": "jerusalem",
+    "heroImage": "https://res.cloudinary.com/dptyfvwyo/image/upload/v1735000040/pilot/hotel-jerusalem-hero.jpg",
+    "gallery": [
+      "https://res.cloudinary.com/dptyfvwyo/image/upload/v1735000041/pilot/hotel-jerusalem-1.jpg",
+      "https://res.cloudinary.com/dptyfvwyo/image/upload/v1735000042/pilot/hotel-jerusalem-2.jpg"
+    ],
+    "description": "מלון בוטיק ירושלים העתיקה - חוויה ייחודית של נופש היסטורי ויוקרתי בלב הלב הפועם של ירושלים.",
+    "highlights": [
+      "מיקום בלב העיר העתיקה",
+      "בניין אבן משוחזר",
+      "גג פנורמי עם נוף 360°",
+      "12 חדרים מעוצבים",
+      "מסעדה כשרה למהדרין",
+      "הליכה לכותל 5 דקות"
+    ],
+    "capacity": 24,
+    "bedrooms": 12,
+    "bathrooms": 12,
+    "affiliateLink": "https://www.tzimer360.co.il/Location/C4675/?affiliate=yc",
+    "featured": true,
+    "rating": 4.9,
+    "reviewsCount": 168
   }
 ]
