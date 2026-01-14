@@ -1,41 +1,46 @@
 import React from 'react';
 import { notFound } from 'next/navigation';
 import MinahBoutiqueClient from './MinahBoutiqueClient';
+import type { Metadata } from 'next';
 
-// Hardcoded data for Minah Boutique
+// Property data
 const property = {
-  "id": "minah-boutique-jerusalem",
-  "slug": "minah-boutique-jerusalem",
-  "name": "מינה בוטיק",
-  "subtitle": "ירושלים",
-  "type": "hotel",
-  "location": "ירושלים",
-  "region": "jerusalem",
-  "heroImage": "https://tours.tzimer360.co.il/Images/מינה בוטיק/מינה בוטיק 1/R0020604_HDR-Edit_still_1229_793.webp",
-  "gallery": [
-    "https://tours.tzimer360.co.il/Images/מינה בוטיק/מינה בוטיק 1/R0020605_HDR-Edit_still_1229_793.webp",
-    "https://tours.tzimer360.co.il/Images/מינה בוטיק/מינה בוטיק 2/R0020602_HDR-Edit_still_1229_793.webp",
-    "https://tours.tzimer360.co.il/Images/מינה בוטיק/מינה בוטיק 3/R0020597_HDR-Edit_still_1229_793.webp",
-    "https://tours.tzimer360.co.il/Images/מינה בוטיק/מינה בוטיק 5/R0020611_HDR-Edit_still_1229_793.webp",
-    "https://tours.tzimer360.co.il/Images/מינה בוטיק/מינה בוטיק 6/R0020618_HDR-Edit_still_1229_793.webp",
-    "https://tours.tzimer360.co.il/Images/מינה בוטיק/מינה בוטיק 7/R0020625_HDR-Edit_still_1229_793.webp",
-    "https://tours.tzimer360.co.il/Images/מינה בוטיק 4/R0020684_HDR-Edit_still_1229_793.webp",
-    "https://tours.tzimer360.co.il/Images/מינה בוטיק/מינה בוטיק 1/R0020608_HDR-Edit_still_1229_793.webp"
+  id: "minah-boutique-jerusalem",
+  slug: "minah-boutique-jerusalem",
+  name: "מינה בוטיק",
+  subtitle: "ירושלים",
+  type: "hotel",
+  location: "ירושלים",
+  region: "jerusalem",
+  heroImage: "https://res.cloudinary.com/decirk3zb/image/upload/v1768342965/R0011001_still_1229_793_iofh7c.webp",
+  gallery: [
+    "https://res.cloudinary.com/decirk3zb/image/upload/v1768342964/R0011612_still_1229_793_vlfqkp.webp",
+    "https://res.cloudinary.com/decirk3zb/image/upload/v1768342965/R0011630_still_1229_793_cucngc.webp",
+    "https://res.cloudinary.com/decirk3zb/image/upload/v1768342964/R0011627_still_1229_793_jn6mw0.webp"
   ],
-  "priceRange": "₪500-750",
-  "priceNote": "מחירים משתנים לפי חדר ועונה",
-  "capacity": 24,
-  "bedrooms": 7,
-  "bathrooms": 6,
-  "featured": true,
-  "rating": 5.0,
-  "reviewsCount": 0,
-  "affiliateLink": "https://www.tzimer360.co.il/Location/C4653/?affiliate=yc",
-  "host": "מיכאל"
+  capacity: 24,
+  bedrooms: 7,
+  bathrooms: 6,
+  featured: true,
+  rating: 5.0,
+  reviewsCount: 0,
+  affiliateLink: "https://www.tzimer360.co.il/Location/C4653/?affiliate=yc",
+  host: "מיכאל"
 };
 
-// Server Component
-export default async function MinahBoutiquePage() {
+// Metadata for SEO
+export const metadata: Metadata = {
+  title: 'מינה בוטיק ירושלים - 7 סוויטות בוטיק במרכז העיר | MULTIBRAWN',
+  description: 'מתחם בוטיק ייחודי במרכז ירושלים עם 7 סוויטות מעוצבות, מיקום מושלם, התאמה לשומרי שבת, ו-2 חדרים עם ג\'קוזי פרטי. קרוב לעיר העתיקה והכותל.',
+  keywords: 'מינה בוטיק, מלון בוטיק ירושלים, צימר ירושלים, לינה ירושלים, סוויטות ירושלים, שומר שבת, ג\'קוזי ירושלים',
+  openGraph: {
+    title: 'מינה בוטיק ירושלים - 7 סוויטות בוטיק',
+    description: 'מתחם בוטיק ייחודי במרכז ירושלים עם 7 סוויטות מעוצבות',
+    images: [property.heroImage],
+  }
+};
+
+export default function MinahBoutiquePage() {
   if (!property) {
     notFound();
   }
