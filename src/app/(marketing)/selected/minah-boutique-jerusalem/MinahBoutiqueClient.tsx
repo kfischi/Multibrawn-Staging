@@ -88,7 +88,7 @@ export default function MinahBoutiqueClient({ property }: MinahBoutiqueClientPro
         <section className={styles.intro}>
           <h2 className={styles.sectionTitle}>אירוח בוטיק בלב ירושלים</h2>
           <p className={styles.introText}>
-            מתחם בוטיק ייחודי במרכז ירושלים המציע שבעה סוויטות אדריכליות מעוצבות בקפידה. כל יחידה מספקת פרטיות מוחלטת, אווירה אינטימית ושקטה, ומיקום מושלם קרוב לכל האטרקציות המרכזיות של העיר העתיקה.
+            מתחם בוטיק ייחודי במרכז ירושלים המציע 7 סוויטות אדריכליות מעוצבות בקפידה. כל יחידה מספקת פרטיות מוחלטת, אווירה אינטימית ושקטה, ומיקום מושלם קרוב לכל האטרקציות המרכזיות של העיר העתיקה.
           </p>
           <p className={styles.introText}>
             המתחם משלב יוקרה עם נוחות, עיצוב מודרני עם חום, ומתאים במיוחד לזוגות, משפחות וקבוצות המחפשות חוויית אירוח מעולה בלב ירושלים. עם התאמה מלאה לשומרי מסורת, נוחות עכשווית ושירות אישי מעולה, מינה בוטיק הוא הבחירה המושלמת לחופשה בירושלים.
@@ -222,10 +222,10 @@ export default function MinahBoutiqueClient({ property }: MinahBoutiqueClientPro
             </p>
             <div className={styles.partnershipLogo}>
               <Image
-                src="https://res.cloudinary.com/decirk3zb/image/upload/v1768424910/%D7%A6%D7%99%D7%9E%D7%A8360_pipstq.png"
+                src="https://res.cloudinary.com/decirk3zb/image/upload/w_140,h_50,c_fit,q_auto,f_auto/v1768424910/%D7%A6%D7%99%D7%9E%D7%A8360_pipstq.png"
                 alt="צימר360"
-                width={180}
-                height={60}
+                width={140}
+                height={50}
                 style={{ objectFit: 'contain' }}
               />
             </div>
