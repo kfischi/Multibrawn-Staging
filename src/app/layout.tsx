@@ -1,8 +1,7 @@
 // src/app/layout.tsx
-
 import type { Metadata } from 'next';
 import { Heebo } from 'next/font/google';
-import Script from 'next/script';
+import Analytics from '@/components/Analytics';
 import './globals.css';
 
 const heebo = Heebo({ 
@@ -60,24 +59,6 @@ export default function RootLayout({
   return (
     <html lang="he" dir="rtl" className={heebo.variable}>
       <head>
-        {/* Google Analytics */}
-        {process.env.NODE_ENV === 'production' && (
-          <>
-            <Script
-              src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"
-              strategy="afterInteractive"
-            />
-            <Script id="google-analytics" strategy="afterInteractive">
-              {`
-                window.dataLayer = window.dataLayer || [];
-                function gtag(){dataLayer.push(arguments);}
-                gtag('js', new Date());
-                gtag('config', 'G-XXXXXXXXXX');
-              `}
-            </Script>
-          </>
-        )}
-
         {/* Schema.org Organization */}
         <script
           type="application/ld+json"
@@ -104,6 +85,9 @@ export default function RootLayout({
         />
       </head>
       <body className={heebo.className}>
+        {/* Google Analytics - G-TER4JG2GT1 */}
+        <Analytics />
+        
         {children}
       </body>
     </html>
