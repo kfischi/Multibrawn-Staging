@@ -385,6 +385,47 @@
   background: var(--gradient-primary-hover);
 }
 
+/* Partnership Footer */
+.partnership {
+  max-width: 800px;
+  margin: 0 auto;
+  padding: 60px 24px;
+  text-align: center;
+  background: white;
+  border-radius: 16px;
+  box-shadow: var(--shadow-md);
+}
+
+.partnershipContent {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.partnershipText {
+  font-size: 16px;
+  font-weight: 500;
+  color: var(--color-text-secondary);
+  margin: 0;
+}
+
+.partnershipLogo {
+  padding: 20px;
+  background: #f8f9fa;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.partnershipNote {
+  font-size: 14px;
+  font-weight: 400;
+  color: var(--color-text-muted);
+  margin: 0;
+}
+
 /* Back Link */
 .backLink {
   text-align: center;
@@ -468,5 +509,14 @@
   .ctaButton {
     width: 100%;
     padding: 18px 32px;
+  }
+
+  .partnership {
+    padding: 40px 20px;
+    border-radius: 0;
+  }
+
+  .partnershipLogo {
+    padding: 16px;
   }
 }
