@@ -214,6 +214,27 @@ export default function MinahBoutiqueClient({ property }: MinahBoutiqueClientPro
           </div>
         </section>
 
+        {/* Partnership Footer */}
+        <section className={styles.partnership}>
+          <div className={styles.partnershipContent}>
+            <p className={styles.partnershipText}>
+              בלחיצה על "בדיקת זמינות והזמנה" תועברו לאתר השותף שלנו
+            </p>
+            <div className={styles.partnershipLogo}>
+              <Image
+                src="https://res.cloudinary.com/decirk3zb/image/upload/v1768424910/%D7%A6%D7%99%D7%9E%D7%A8360_pipstq.png"
+                alt="צימר360"
+                width={180}
+                height={60}
+                style={{ objectFit: 'contain' }}
+              />
+            </div>
+            <p className={styles.partnershipNote}>
+              לביצוע ההזמנה הסופית והתשלום
+            </p>
+          </div>
+        </section>
+
         {/* Back Link */}
         <div className={styles.backLink}>
           <Link href="/selected">חזרה למובחרים</Link>
