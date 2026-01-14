@@ -6,11 +6,11 @@
     "type": "hotel",
     "location": "ירושלים",
     "region": "jerusalem",
-    "heroImage": "https://res.cloudinary.com/decirk3zb/image/upload/v1768342965/R0011001_still_1229_793_iofh7c.webp",
+    "heroImage": "https://res.cloudinary.com/decirk3zb/image/upload/w_1200,h_800,c_fill,q_auto,f_auto/v1768342965/R0011001_still_1229_793_iofh7c.webp",
     "gallery": [
-      "https://res.cloudinary.com/decirk3zb/image/upload/v1768342964/R0011612_still_1229_793_vlfqkp.webp",
-      "https://res.cloudinary.com/decirk3zb/image/upload/v1768342965/R0011630_still_1229_793_cucngc.webp",
-      "https://res.cloudinary.com/decirk3zb/image/upload/v1768342964/R0011627_still_1229_793_jn6mw0.webp"
+      "https://res.cloudinary.com/decirk3zb/image/upload/w_800,h_600,c_fill,q_auto,f_auto/v1768342964/R0011612_still_1229_793_vlfqkp.webp",
+      "https://res.cloudinary.com/decirk3zb/image/upload/w_800,h_600,c_fill,q_auto,f_auto/v1768342965/R0011630_still_1229_793_cucngc.webp",
+      "https://res.cloudinary.com/decirk3zb/image/upload/w_800,h_600,c_fill,q_auto,f_auto/v1768342964/R0011627_still_1229_793_jn6mw0.webp"
     ],
     "description": "מתחם בוטיק ייחודי במרכז ירושלים המציע שבעה סוויטות אדריכליות מעוצבות בקפידה. כל יחידה מספקת פרטיות מוחלטת, אווירה אינטימית ושקטה, ומיקום מושלם קרוב לכל האטרקציות המרכזיות של העיר העתיקה. המתחם משלב יוקרה עם נוחות, עיצוב מודרני עם חום, ומתאים במיוחד לזוגות, משפחות וקבוצות המחפשות חוויית אירוח מעולה בלב ירושלים.",
     "highlights": [
