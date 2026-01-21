@@ -34,7 +34,7 @@ export default function BiankiniPropertyPageClient({ property }: BiankiniPropert
         <div className={styles.heroImage}>
           <Image
             src={allImages[activeImageIndex]}
-            alt={property.name}
+            alt={`תמונה ${activeImageIndex + 1}`}
             fill
             priority
             sizes="100vw"
@@ -90,7 +90,7 @@ export default function BiankiniPropertyPageClient({ property }: BiankiniPropert
             >
               <Image
                 src={img}
-                alt={`${property.name} - תמונה ${index + 1}`}
+                alt={`תמונה ${index + 1}`}
                 fill
                 sizes="120px"
                 style={{ objectFit: 'cover' }}
