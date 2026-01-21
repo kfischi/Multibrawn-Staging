@@ -220,6 +220,9 @@ export default function PropertyPageClient({ property }: PropertyPageClientProps
               <span>בדוק זמינות והזמן</span>
               <span className={styles.ctaArrow}>→</span>
             </a>
+            <p className={styles.ctaDisclaimer}>
+              * לאחר הלחיצה על הכפתור תועברו לאתר צימר 360
+            </p>
           </div>
         </section>
 
