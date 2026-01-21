@@ -7,13 +7,13 @@ const property = {
   type: "event",
   location: "קליה, ים המלח",
   region: "south",
-  heroImage: "https://res.cloudinary.com/dptyfvwyo/image/upload/v1737468001/biankini/hero-main.jpg",
+  heroImage: "https://res.cloudinary.com/decirk3zb/image/upload/v1769030004/R0020469_HDR-Edit_still_1229_793_ucujhh.webp",
   gallery: [
-    "https://res.cloudinary.com/dptyfvwyo/image/upload/v1737468002/biankini/moroccan-design.jpg",
-    "https://res.cloudinary.com/dptyfvwyo/image/upload/v1737468003/biankini/pool-area.jpg",
-    "https://res.cloudinary.com/dptyfvwyo/image/upload/v1737468004/biankini/beach-view.jpg",
-    "https://res.cloudinary.com/dptyfvwyo/image/upload/v1737468005/biankini/event-hall.jpg",
-    "https://res.cloudinary.com/dptyfvwyo/image/upload/v1737468006/biankini/suites.jpg"
+    "https://res.cloudinary.com/decirk3zb/image/upload/v1769030004/R0020468_HDR-Edit_still_1229_793_urnhdm.webp",
+    "https://res.cloudinary.com/decirk3zb/image/upload/v1769030004/R0020455_HDR-Edit_still_1229_793_lxmwie.webp",
+    "https://res.cloudinary.com/decirk3zb/image/upload/v1769030004/R0020458_HDR-Edit_still_1229_793_u7aswa.webp",
+    "https://res.cloudinary.com/decirk3zb/image/upload/v1769030004/R0020461_HDR-Edit_still_1229_793_lugpld.webp",
+    "https://res.cloudinary.com/decirk3zb/image/upload/v1769030004/R0020444_HDR-Edit_-_Copy_still_1229_793_dxpo50.webp"
   ],
   description: "כפר נופש מרהיב בעיצוב מרוקאי אותנטי הפרוס על 200 דונם על חוף ים המלח. המתחם כולל 110 יחידות אירוח מגוונות, חוף פרטי עם בוץ מינרלי חופשי, בריכה חצי אולימפית, 3 אולמות אירועים ומתקנים עשירים. מתאים לאירועים גדולים, חתונות, אירועי חברה וחופשות משפחתיות במיקום ייחודי במקום הנמוך ביותר בעולם.",
   highlights: [
