@@ -5,15 +5,23 @@ import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../[slug]/PropertyPage.module.css';
 
-interface BiankiniPropertyPageClientProps {
+interface PropertyPageClientProps {
   property: any;
 }
 
-export default function BiankiniPropertyPageClient({ property }: BiankiniPropertyPageClientProps) {
+export default function PropertyPageClient({ property }: PropertyPageClientProps) {
   const [activeImageIndex, setActiveImageIndex] = useState(0);
   const [showAllAmenities, setShowAllAmenities] = useState(false);
 
-  const allImages = [property.heroImage, ...property.gallery];
+  // All 6 images for the gallery
+  const allImages = [
+    "https://res.cloudinary.com/decirk3zb/image/upload/v1769030004/R0020469_HDR-Edit_still_1229_793_ucujhh.webp",
+    "https://res.cloudinary.com/decirk3zb/image/upload/v1769030004/R0020468_HDR-Edit_still_1229_793_urnhdm.webp",
+    "https://res.cloudinary.com/decirk3zb/image/upload/v1769030004/R0020455_HDR-Edit_still_1229_793_lxmwie.webp",
+    "https://res.cloudinary.com/decirk3zb/image/upload/v1769030004/R0020458_HDR-Edit_still_1229_793_u7aswa.webp",
+    "https://res.cloudinary.com/decirk3zb/image/upload/v1769030004/R0020461_HDR-Edit_still_1229_793_lugpld.webp",
+    "https://res.cloudinary.com/decirk3zb/image/upload/v1769030004/R0020444_HDR-Edit_-_Copy_still_1229_793_dxpo50.webp"
+  ];
 
   const typeLabels: Record<string, string> = {
     villa: 'וילה',
@@ -34,7 +42,7 @@ export default function BiankiniPropertyPageClient({ property }: BiankiniPropert
         <div className={styles.heroImage}>
           <Image
             src={allImages[activeImageIndex]}
-            alt={`תמונה ${activeImageIndex + 1}`}
+            alt="תמונת נכס"
             fill
             priority
             sizes="100vw"
@@ -47,7 +55,7 @@ export default function BiankiniPropertyPageClient({ property }: BiankiniPropert
           <div className={styles.heroBreadcrumb}>
             <Link href="/selected">המובחרים</Link>
             <span className={styles.breadcrumbSep}>›</span>
-            <span>{property.name}</span>
+            <span>מתחם נופש ים המלח</span>
           </div>
 
           <div className={styles.heroMain}>
@@ -62,7 +70,7 @@ export default function BiankiniPropertyPageClient({ property }: BiankiniPropert
               )}
             </div>
 
-            <h1 className={styles.heroTitle}>{property.name}</h1>
+            <h1 className={styles.heroTitle}>מתחם נופש יוקרתי על חוף ים המלח</h1>
             
             <p className={styles.heroLocation}>
               {property.location}
@@ -82,11 +90,12 @@ export default function BiankiniPropertyPageClient({ property }: BiankiniPropert
       {/* Gallery Thumbnails */}
       <section className={styles.gallerySection}>
         <div className={styles.galleryGrid}>
-          {allImages.slice(0, 6).map((img, index) => (
+          {allImages.map((img, index) => (
             <button
               key={index}
               className={`${styles.galleryThumb} ${activeImageIndex === index ? styles.activeThumb : ''}`}
               onClick={() => setActiveImageIndex(index)}
+              aria-label={`תמונה ${index + 1}`}
             >
               <Image
                 src={img}
@@ -97,11 +106,6 @@ export default function BiankiniPropertyPageClient({ property }: BiankiniPropert
               />
             </button>
           ))}
-          {allImages.length > 6 && (
-            <div className={styles.morePhotos}>
-              +{allImages.length - 6}
-            </div>
-          )}
         </div>
       </section>
 
@@ -200,7 +204,7 @@ export default function BiankiniPropertyPageClient({ property }: BiankiniPropert
             <div className={styles.ctaContent}>
               <h3 className={styles.ctaTitle}>מוכנים להזמין?</h3>
               <p className={styles.ctaText}>
-                בדקו זמינות והזמינו את {property.name} עכשיו
+                בדקו זמינות והזמינו את המתחם עכשיו
               </p>
               <div className={styles.ctaPrice}>
                 <span className={styles.ctaPriceAmount}>{property.priceRange}</span>
