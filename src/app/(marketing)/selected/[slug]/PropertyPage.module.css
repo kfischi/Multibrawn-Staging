@@ -104,6 +104,12 @@
   text-shadow: 0 4px 20px rgba(0, 0, 0, 0.3);
 }
 
+.heroLocation {
+  font-size: 1.1rem;
+  margin-bottom: 1.5rem;
+  opacity: 0.9;
+}
+
 .heroMeta {
   display: flex;
   align-items: center;
@@ -122,7 +128,8 @@
   font-size: 1.1rem;
 }
 
-.metaDivider {
+.metaDivider,
+.metaDot {
   opacity: 0.5;
 }
 
@@ -198,7 +205,8 @@
 }
 
 /* Gallery Thumbnails */
-.galleryThumbs {
+.galleryThumbs,
+.gallerySection {
   position: absolute;
   bottom: 2rem;
   left: 2rem;
@@ -207,7 +215,13 @@
   z-index: 3;
 }
 
-.thumb {
+.galleryGrid {
+  display: flex;
+  gap: 0.75rem;
+}
+
+.thumb,
+.galleryThumb {
   position: relative;
   width: 80px;
   height: 80px;
@@ -218,7 +232,8 @@
   transition: all 0.3s ease;
 }
 
-.thumb:hover {
+.thumb:hover,
+.galleryThumb:hover {
   border-color: rgba(255, 255, 255, 0.5);
   transform: translateY(-4px);
 }
@@ -425,6 +440,7 @@
 
 .ctaCard {
   display: flex;
+  flex-direction: column;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
@@ -437,6 +453,7 @@
 
 .ctaContent {
   flex: 1;
+  text-align: center;
 }
 
 .ctaTitle {
@@ -455,6 +472,7 @@
   display: flex;
   align-items: baseline;
   gap: 0.5rem;
+  justify-content: center;
 }
 
 .ctaPriceAmount {
@@ -494,6 +512,14 @@
 
 .ctaButton:hover .ctaArrow {
   transform: translateX(4px);
+}
+
+.ctaDisclaimer {
+  text-align: center;
+  margin-top: 1rem;
+  font-size: 0.85rem;
+  color: rgba(255, 255, 255, 0.85);
+  font-style: italic;
 }
 
 /* ============================================
@@ -556,6 +582,11 @@
     width: 100%;
     justify-content: center;
   }
+
+  .ctaDisclaimer {
+    margin-top: 1.5rem;
+    font-size: 0.8rem;
+  }
 }
 
 @media (max-width: 768px) {
@@ -581,12 +612,14 @@
     justify-content: center;
   }
 
-  .galleryThumbs {
+  .galleryThumbs,
+  .gallerySection {
     left: 1rem;
     bottom: 1rem;
   }
 
-  .thumb {
+  .thumb,
+  .galleryThumb {
     width: 60px;
     height: 60px;
   }
@@ -641,7 +674,8 @@
     display: none;
   }
 
-  .galleryThumbs {
+  .galleryThumbs,
+  .gallerySection {
     flex-wrap: wrap;
   }
 
