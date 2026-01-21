@@ -1,6 +1,6 @@
 'use client';
 
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Image from 'next/image';
 import Link from 'next/link';
 import styles from '../[slug]/PropertyPage.module.css';
@@ -22,6 +22,17 @@ export default function PropertyPageClient({ property }: PropertyPageClientProps
     "https://res.cloudinary.com/decirk3zb/image/upload/v1769030004/R0020461_HDR-Edit_still_1229_793_lugpld.webp",
     "https://res.cloudinary.com/decirk3zb/image/upload/v1769030004/R0020444_HDR-Edit_-_Copy_still_1229_793_dxpo50.webp"
   ];
+
+  // Auto-rotate images every 4 seconds
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setActiveImageIndex((prevIndex) => 
+        prevIndex === allImages.length - 1 ? 0 : prevIndex + 1
+      );
+    }, 4000); // Change image every 4 seconds
+
+    return () => clearInterval(interval);
+  }, [allImages.length]);
 
   const typeLabels: Record<string, string> = {
     villa: 'וילה',
