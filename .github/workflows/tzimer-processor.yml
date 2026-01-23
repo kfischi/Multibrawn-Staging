@@ -1,0 +1,83 @@
+name: 🚀 Tzimer360 Auto Processor
+
+on:
+  # מופעל אוטומטית כשמעלים affiliate-links.txt
+  push:
+    paths:
+      - 'affiliate-links.txt'
+  
+  # או ידני דרך GitHub UI
+  workflow_dispatch:
+    inputs:
+      urls:
+        description: 'קישורי Tzimer360 (מופרדים בשורות)'
+        required: false
+        type: string
+
+jobs:
+  process-affiliates:
+    runs-on: ubuntu-latest
+    
+    permissions:
+      contents: write
+      
+    steps:
+      - name: 📥 Checkout Repository
+        uses: actions/checkout@v4
+        with:
+          token: ${{ secrets.GITHUB_TOKEN }}
+          
+      - name: 🐍 Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pip'
+          
+      - name: 📦 Install Dependencies
+        run: |
+          pip install --quiet requests beautifulsoup4 python-dotenv Pillow
+          
+      - name: 🔍 Process Affiliate Links
+        env:
+          GEMINI_API_KEY: ${{ secrets.GEMINI_API_KEY }}
+          CLOUDINARY_CLOUD_NAME: dptyfvwyo
+          CLOUDINARY_API_KEY: ${{ secrets.CLOUDINARY_API_KEY }}
+          CLOUDINARY_API_SECRET: ${{ secrets.CLOUDINARY_API_SECRET }}
+        run: |
+          python scripts/process_tzimer.py
+          
+      - name: 📊 Commit and Push Changes
+        run: |
+          git config --local user.email "github-actions[bot]@users.noreply.github.com"
+          git config --local user.name "MULTIBRAWN Bot"
+          git add -A
+          
+          # בדוק אם יש שינויים
+          if ! git diff --staged --quiet; then
+            git commit -m "🎨 Auto-add properties from Tzimer360"
+            git push
+            echo "✅ Changes pushed successfully!"
+          else
+            echo "ℹ️ No changes to commit"
+          fi
+          
+      - name: 🧹 Clean up processed links
+        if: success()
+        run: |
+          # נקה את affiliate-links.txt אחרי עיבוד מוצלח
+          > affiliate-links.txt
+          git add affiliate-links.txt
+          git commit -m "🧹 Clear processed affiliate links" || true
+          git push || true
+          
+      - name: 📢 Summary
+        if: always()
+        run: |
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo "🎉 Tzimer360 Processing Complete!"
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
+          echo ""
+          echo "Check your staging site:"
+          echo "https://staging.multibrawn.co.il/selected"
+          echo ""
+          echo "━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━"
