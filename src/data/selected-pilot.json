@@ -1,1 +1,17 @@
-
+[
+  {
+    "id": "C4652",
+    "slug": "boutique-design-suite-north",
+    "name": "אחוזת העיצוב המודרני - סוויטות בוטיק",
+    "type": "villa",
+    "location": "גליל מערבי",
+    "region": "north",
+    "heroImage": "https://res.cloudinary.com/decirk3zb/image/upload/v1/affiliate-properties/C4652-1.jpg",
+    "priceRange": "₪1,400 - ₪2,200",
+    "capacity": 4,
+    "bedrooms": 2,
+    "featured": true,
+    "rating": 4.9,
+    "reviewsCount": 8
+  }
+]
