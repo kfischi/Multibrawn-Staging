@@ -3,17 +3,19 @@ import aboutData from '@/data/about.json';
 import tipsData from '@/data/tips.json';
 import { Property, PropertyCategory, AboutData, Tip, TipCategory } from '@/types';
 
+// עזר פנימי לוודא שאנחנו עובדים עם מערך תקין
+const safeProperties = Array.isArray(propertiesData) ? propertiesData : [];
+
 // Properties
 export function getProperties(): Property[] {
-  return propertiesData.properties as Property[];
+  return safeProperties as Property[];
 }
 
 export function getPropertyById(id: string): Property | undefined {
-  return propertiesData.properties.find((p: any) => p.id === id) as Property | undefined;
+  return safeProperties.find((p: any) => p.id === id) as Property | undefined;
 }
 
 export function getPropertyCategories(): PropertyCategory[] {
-  // Return hardcoded categories since JSON was simplified
   return [
     { id: 'all', name: 'הכל', slug: 'all', description: 'כל הנכסים', icon: '🏠' },
     { id: 'zimmer', name: 'צימרים', slug: 'zimmer', description: 'צימרים רומנטיים', icon: '🏡' },
@@ -27,7 +29,7 @@ export function getPropertiesByCategory(category: string): Property[] {
   if (category === 'all') {
     return getProperties();
   }
-  return propertiesData.properties.filter((p: any) => p.type === category) as Property[];
+  return safeProperties.filter((p: any) => p.type === category) as Property[];
 }
 
 export function getPropertyStats() {
@@ -46,11 +48,14 @@ export function getAboutData(): AboutData {
 
 // Tips
 export function getTips(): Tip[] {
-  return tipsData.tips as Tip[];
+  // תיקון דומה גם לטיפים במידה וגם הם במבנה מערך
+  const safeTips = Array.isArray(tipsData) ? tipsData : (tipsData as any).tips || [];
+  return safeTips as Tip[];
 }
 
 export function getTipBySlug(slug: string): Tip | undefined {
-  return tipsData.tips.find((t: any) => t.slug === slug) as Tip | undefined;
+  const tips = getTips();
+  return tips.find((t: any) => t.slug === slug) as Tip | undefined;
 }
 
 export function getTipCategories(): TipCategory[] {
@@ -67,22 +72,22 @@ export function getTipsByCategory(category: string): Tip[] {
   if (category === 'all') {
     return getTips();
   }
-  return tipsData.tips.filter((t: any) => t.category === category) as Tip[];
+  return getTips().filter((t: any) => t.category === category) as Tip[];
 }
 
 // Search
 export function searchProperties(query: string): Property[] {
   const lowercaseQuery = query.toLowerCase();
-  return propertiesData.properties.filter((p: any) => 
+  return safeProperties.filter((p: any) => 
     p.name.toLowerCase().includes(lowercaseQuery) ||
     p.location.toLowerCase().includes(lowercaseQuery) ||
-    p.description.toLowerCase().includes(lowercaseQuery)
+    (p.description && p.description.toLowerCase().includes(lowercaseQuery))
   ) as Property[];
 }
 
 export function searchTips(query: string): Tip[] {
   const lowercaseQuery = query.toLowerCase();
-  return tipsData.tips.filter((t: any) => 
+  return getTips().filter((t: any) => 
     t.title.toLowerCase().includes(lowercaseQuery) ||
     t.description.toLowerCase().includes(lowercaseQuery)
   ) as Tip[];
