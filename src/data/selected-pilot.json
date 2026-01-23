@@ -1,28 +1,38 @@
-{
-  "id": "test-prop-001",
-  "slug": "test-villa-galilee-012326",
-  "name": "וילת טסט בגליל המערבי",
-  "location": "גליל מערבי",
-  "region": "צפון",
-  "description": "וילה יפהפייה לטסט המערכת",
-  "type": "villa",
-  "category": "selected",
-  "guests": "עד 8 אורחים",
-  "bedrooms": 3,
-  "bathrooms": 2,
-  "rating": 4.8,
-  "pricePerNight": 1200,
-  "features": ["בריכה פרטית", "ג'קוזי", "נוף פנורמי"],
-  "amenities": ["מטבח מאובזר", "Wi-Fi", "חניה"],
-  "images": [
-    "https://res.cloudinary.com/decirk3zb/image/upload/v1/affiliate-properties/test-1.jpg"
-  ],
-  "contactPhone": "052-398-3394",
-  "checkIn": "15:00",
-  "checkOut": "11:00",
-  "whatsapp": "972523983394",
-  "affiliateUrl": "https://www.tzimer360.co.il/Location/C4652?t=affiliate26",
-  "isFeatured": true,
-  "isAvailable": true,
-  "createdAt": "2026-01-26T10:00:00Z"
-}
+[
+  {
+    "id": "test-prop-001",
+    "slug": "test-villa-galilee-012326",
+    "name": "וילת טסט בגליל המערבי",
+    "location": "גליל מערבי",
+    "region": "צפון",
+    "description": "וילה יפהפייה לטסט המערכת",
+    "type": "villa",
+    "category": "selected",
+    "guests": "עד 8 אורחים",
+    "bedrooms": 3,
+    "bathrooms": 2,
+    "rating": 4.8,
+    "pricePerNight": 1200,
+    "features": [
+      "בריכה פרטית",
+      "ג'קוזי",
+      "נוף פנורמי"
+    ],
+    "amenities": [
+      "מטבח מאובזר",
+      "Wi-Fi",
+      "חניה"
+    ],
+    "images": [
+      "https://res.cloudinary.com/decirk3zb/image/upload/v1/affiliate-properties/test-1.jpg"
+    ],
+    "contactPhone": "052-398-3394",
+    "checkIn": "15:00",
+    "checkOut": "11:00",
+    "whatsapp": "972523983394",
+    "affiliateUrl": "https://www.tzimer360.co.il/Location/C4652?t=affiliate26",
+    "isFeatured": true,
+    "isAvailable": true,
+    "createdAt": "2026-01-26T10:00:00Z"
+  }
+]
