@@ -1,10 +1,11 @@
 import { getProperties } from "@/lib/api";
-import PropertyCard from "@/components/PropertyCard";
+// שימוש בנתיב יחסי כדי לוודא שנטליפיי מוצא את הקומפוננטה המקורית שלך
+import PropertyCard from "../../../components/PropertyCard"; 
 
 export default async function SelectedPage() {
   const data = await getProperties();
   
-  // זה התיקון שמונע מהאתר לקרוס:
+  // הגנה על הנתונים כדי למנוע קריסה (הסיבה המקורית לתקלה)
   const properties = Array.isArray(data) ? data : [];
   const filteredProperties = properties.filter((p: any) => p.category === 'selected');
 
