@@ -1,17 +1,1 @@
-[
-  {
-    "id": "C4652",
-    "slug": "villa-test-galilee",
-    "name": "וילת טסט בגליל המערבי",
-    "type": "villa",
-    "location": "גליל מערבי",
-    "region": "north",
-    "heroImage": "https://res.cloudinary.com/decirk3zb/image/upload/v1/affiliate-properties/test-1.jpg",
-    "priceRange": "₪1,200 - ₪1,800",
-    "capacity": 8,
-    "bedrooms": 3,
-    "featured": true,
-    "rating": 4.8,
-    "reviewsCount": 12
-  }
-]
+
