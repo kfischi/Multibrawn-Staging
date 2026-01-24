@@ -3,14 +3,14 @@ import React from 'react';
 import Link from 'next/link';
 import propertiesData from '@/data/selected-pilot.json';
 
-// הגדרת המבנה של הנכס כדי ש-TypeScript לא יצעק
+// הגדרת המבנה של הנכס
 interface Property {
   id: string;
   slug: string;
   name: string;
   location: string;
   heroImage: string;
-  description?: string; // סימן השאלה אומר שזה אופציונלי
+  description?: string;
   priceRange?: string;
 }
 
@@ -43,9 +43,12 @@ export default function NetflixGalleryPage() {
               {featured.description || "חוויית נופש יוקרתית במיקום המושלם. נכס נבחר מרשימת ה-Selected של Multibrawn."}
             </p>
             <div className="flex gap-4">
-              <Link href={`/selected/${featured.slug}`} className="bg-white text-black px-10 py-4 rounded-md font-bold hover:bg-gray-200 transition-all text-lg shadow-xl">
+              <Link 
+                href={`/selected/${featured.slug}`} 
+                className="bg-white text-black px-10 py-4 rounded-md font-bold hover:bg-gray-200 transition-all text-lg shadow-xl"
+              >
                 פרטים נוספים
-              </a>
+              </Link>
             </div>
           </div>
         </section>
@@ -54,7 +57,7 @@ export default function NetflixGalleryPage() {
       {/* Netflix-Style Slider Section */}
       <section className="space-y-8">
         <div className="px-6 md:px-12">
-          <h2 className="text-2xl font-bold mb-6 hover:text-amber-500 transition-colors cursor-pointer inline-block border-r-4 border-amber-500 pr-4">
+          <h2 className="text-2xl font-bold mb-6 hover:text-amber-500 transition-colors cursor-pointer inline-block border-r-4 border-amber-500 pr-4 uppercase tracking-tighter">
             הקולקציה הנבחרת - SELECTED
           </h2>
           
