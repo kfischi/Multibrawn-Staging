@@ -4,7 +4,7 @@ import React, { useState, useMemo } from 'react';
 import Link from 'next/link';
 import Image from 'next/image';
 import styles from './Selected.module.css';
-import selectedProperties from '@/data/properties.json';
+import selectedProperties from '@/data/selected-pilot.json';
 
 type PropertyType = 'villa' | 'zimmer' | 'apartment' | 'hotel' | 'event';
 type Region = 'north' | 'center' | 'south' | 'jerusalem';
