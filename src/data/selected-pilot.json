@@ -2,21 +2,32 @@
   {
     "id": "north-zimmer-romantic-339281",
     "slug": "north-zimmer-romantic-339281",
-    "name": "סוויטת בוטיק יוקרתית עם בריכה פרטית מחוממת וג'קוזי ספא במרום הגליל",
+    "name": "סוויטות יוקרה פרובנס ים המלח - בריכה פרטית מול נופי אדום",
     "type": "zimmer",
-    "location": "ספסופה, גליל עליון",
-    "region": "north",
-    "heroImage": "https://res.cloudinary.com/dptyfvwyo/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_1.jpg",
+    "location": "נווה זוהר, ים המלח",
+    "region": "south",
+    "heroImage": "https://res.cloudinary.com/decirk3zb/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_1.jpg",
     "gallery": [
-      "https://res.cloudinary.com/dptyfvwyo/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_2.jpg",
-      "https://res.cloudinary.com/dptyfvwyo/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_3.jpg",
-      "https://res.cloudinary.com/dptyfvwyo/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_4.jpg",
-      "https://res.cloudinary.com/dptyfvwyo/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_5.jpg"
+      "https://res.cloudinary.com/decirk3zb/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_2.jpg",
+      "https://res.cloudinary.com/decirk3zb/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_3.jpg",
+      "https://res.cloudinary.com/decirk3zb/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_4.jpg",
+      "https://res.cloudinary.com/decirk3zb/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_5.jpg"
     ],
-    "description": "חוויית אירוח יוקרתית ואינטימית בסוויטה מעוצבת הכוללת בריכה פרטית מחוממת ומקורה.",
+    "description": "סוויטות יוקרה פרובנס שוכנות בישוב נווה זוהר הצמוד לים המלח, ומציעות חוויית אירוח מדברית יוקרתית בסטנדרט הגבוה ביותר. בכל סוויטה תיהנו מבריכה פרטית מחוממת, ג'קוזי ספא מפנק ועיצוב פנים המשלב רוגע ואינטימיות. המיקום מושלם למי שמחפש שקט מדברי עוצר נשימה במרחק דקות מהחופים המוסדרים.",
+    "areaAttractions": [
+      "חופי ים המלח המוסדרים (2 דקות נסיעה)",
+      "גן לאומי מצדה - תצפית זריחה מרהיבה (15 דקות נסיעה)",
+      "נחל דוד ונחל ערוגות בשמורת עין גדי",
+      "טיולי ג'יפים וטרקטורונים במדבר יהודה"
+    ],
+    "nearbyDining": [
+      "מרכז הקניות והמסעדות בעין בוקק",
+      "מסעדת 'טאג' מאהל' - חוויה מזרחית אותנטית",
+      "בתי קפה ופאבים באזור המלונות הסמוך"
+    ],
     "capacity": 2,
     "bedrooms": 1,
-    "priceRange": "₪1200-1800",
+    "priceRange": "₪1200 - ₪1800",
     "affiliateLink": "https://www.tzimer360.co.il/Location/C4671?t=affiliate26"
   }
 ]
