@@ -2,25 +2,17 @@
   {
     "id": "C4671",
     "slug": "agam-hahalom-dead-sea-resort",
-    "name": "אגם החלומות - מתחם נופש יוקרתי בים המלח",
-    "type": "villa",
+    "name": "אגם החלומות",
     "location": "נווה זוהר",
-    "region": "south",
     "heroImage": "https://tours.tzimer360.co.il/Images/אגם החלומות/וילה/R0020640_HDR-Edit_still_1229_793.webp",
-    "images": [
-      "https://tours.tzimer360.co.il/Images/אגם החלומות/וילה/R0020640_HDR-Edit_still_1229_793.webp",
-      "https://tours.tzimer360.co.il/Images/אגם החלומות/וילה/R0020627_HDR-Edit_still_1229_793.webp",
-      "https://tours.tzimer360.co.il/Images/אגם החלומות/וילה/R0020630_HDR-Edit_still_1229_793.webp"
-    ],
-    "priceRange": "₪1,650 - ₪5,500",
-    "capacity": 46,
-    "bedrooms": 8,
-    "description": "מתחם נופש יוקרתי בים המלח הכולל וילה ענקית ושתי סוויטות מפנקות. כל יחידה עם בריכה פרטית מחוממת, ג'קוזי ומתחם חוץ פרטי.",
-    "features": ["בריכה פרטית מחוממת", "ג'קוזי ספא", "נוף לים המלח", "נגישות מלאה"],
-    "amenities": ["Wi-Fi", "מכונת קפה", "Netflix", "חניה פרטית"],
-    "checkIn": "15:00",
-    "checkOut": "11:00",
-    "whatsapp": "972548208770",
-    "affiliateUrl": "https://www.tzimer360.co.il/Location/C4671?t=affiliate26"
+    "priceRange": "מ-₪1,650"
+  },
+  {
+    "id": "C4652",
+    "slug": "boutique-design-suite-north",
+    "name": "אחוזת העיצוב המודרני",
+    "location": "גליל מערבי",
+    "heroImage": "https://tours.tzimer360.co.il/Images/אחוזת העיצוב/R0020640_HDR-Edit_still_1229_793.webp",
+    "priceRange": "מ-₪1,400"
   }
 ]
