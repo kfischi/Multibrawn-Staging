@@ -1,30 +1,30 @@
 [
   {
-    "id": "north-zimmer-romantic-339281",
-    "slug": "north-zimmer-romantic-339281",
-    "name": "סוויטות יוקרה פרובנס ים המלח - חוויית אירוח מדברית עם בריכה פרטית",
+    "id": "dead-sea-provence-339281",
+    "slug": "dead-sea-provence-339281",
+    "name": "סוויטות יוקרה פרובנס ים המלח - בריכה פרטית מול נופי אדום",
     "type": "zimmer",
     "location": "נווה זוהר, ים המלח",
     "region": "south",
-    "heroImage": "https://res.cloudinary.com/decirk3zb/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_1.jpg",
+    "heroImage": "https://multibrawn.b-cdn.net/C4671_1.jpg",
     "gallery": [
-      "https://res.cloudinary.com/decirk3zb/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_2.jpg",
-      "https://res.cloudinary.com/decirk3zb/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_3.jpg",
-      "https://res.cloudinary.com/decirk3zb/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_4.jpg",
-      "https://res.cloudinary.com/decirk3zb/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_5.jpg"
+      "https://multibrawn.b-cdn.net/C4671_2.jpg",
+      "https://multibrawn.b-cdn.net/C4671_3.jpg",
+      "https://multibrawn.b-cdn.net/C4671_4.jpg",
+      "https://multibrawn.b-cdn.net/C4671_5.jpg"
     ],
-    "description": "סוויטות יוקרה פרובנס בנווה זוהר מביאות את העיצוב הכפרי-יוקרתי אל לב הנוף המדברי. הסוויטות מעוצבות בקפידה ומציעות פרטיות מוחלטת עם בריכה פרטית מרעננת, ג'קוזי ספא זרמים מפנק וחצר מטופחת מול הרי אדום. זהו המקום המושלם להתנתק מהיומיום וליהנות מהשקט העוצמתי של ים המלח.",
+    "description": "סוויטות יוקרה פרובנס בנווה זוהר מביאות את העיצוב הכפרי-יוקרתי אל לב הנוף המדברי. הסוויטות מציעות פרטיות מוחלטת עם בריכה פרטית, ג'קוזי ספא זרמים מפנק וחצר מטופחת מול הרי אדום.",
     "longDescription": "הסוויטות מציעות אבזור מלא הכולל מיטה זוגית אורתופדית, מטבחון מאובזר, מכונת אספרסו ופינת ישיבה מעוצבת. מחוץ לסוויטה מחכה לכם מתחם פרטי הכולל בריכה (מחוממת בחורף), מיטות שיזוף וג'קוזי ספא, הכל תחת כיפת השמיים ובאווירה מדברית קסומה.",
     "areaAttractions": [
-      "חופים מוסדרים: גישה מהירה לחופי נווה זוהר ועין בוקק המשופצים",
-      "גן לאומי מצדה: ביקור באתר המורשת העולמית ותצפית זריחה בלתי נשכחת",
-      "שמורת עין גדי: מסלולי הליכה רטובים בנחל דוד ונחל ערוגות",
-      "טיולי שטח: סיורי ג'יפים וטרקטורונים במדבר יהודה והר סדום"
+      "חופי ים המלח המוסדרים (2 דקות נסיעה)",
+      "גן לאומי מצדה - תצפית זריחה מרהיבה (15 דקות נסיעה)",
+      "נחל דוד ונחל ערוגות בשמורת עין גדי",
+      "טיולי ג'יפים וטרקטורונים במדבר יהודה"
     ],
     "nearbyDining": [
-      "מסעדת 'טאג' מאהל' - חוויה מזרחית באוהל בדואי מעוצב",
-      "מתחם עין בוקק - מגוון מסעדות דגים, בשרים ובתי קפה",
-      "קניון ים המלח - מגוון אפשרויות קולינריות וקניות ללא מע\"מ"
+      "מרכז הקניות והמסעדות בעין בוקק",
+      "מסעדת 'טאג' מאהל' - חוויה מזרחית אותנטית",
+      "בתי קפה ופאבים באזור המלונות הסמוך"
     ],
     "capacity": 2,
     "bedrooms": 1,
