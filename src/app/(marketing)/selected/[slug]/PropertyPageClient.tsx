@@ -5,17 +5,16 @@ import Image from 'next/image';
 import styles from './PropertyPage.module.css';
 
 export default function PropertyPageClient({ property }: { property: any }) {
-  // הגנה: אם אין תמונה ראשית, נשים פלייסהולדר
-  const hero = property?.heroImage || '';
-  const [activeImg, setActiveImg] = useState(hero);
+  // הגדרת תמונה ראשית כטקסט
+  const hero: string = property?.heroImage || '';
+  const [activeImg, setActiveImg] = useState<string>(hero);
   
-  // הגנה: יצירת מערך תמונות בטוח
-  const gallery = Array.isArray(property?.gallery) ? property.gallery : [];
-  const allImages = hero ? [hero, ...gallery] : gallery;
+  // הגדרת הגלריה כמערך של טקסטים
+  const gallery: string[] = Array.isArray(property?.gallery) ? property.gallery : [];
+  const allImages: string[] = hero ? [hero, ...gallery] : gallery;
 
-  // הגנה: יצירת מערכי טקסט בטוחים
-  const highlights = Array.isArray(property?.highlights) ? property.highlights : [];
-  const amenities = Array.isArray(property?.amenities) ? property.amenities : [];
+  // הגדרת מערכי טקסט בטוחים
+  const highlights: string[] = Array.isArray(property?.highlights) ? property.highlights : [];
 
   if (!property) return <div className="p-20 text-center">נכס לא נמצא</div>;
 
@@ -35,7 +34,7 @@ export default function PropertyPageClient({ property }: { property: any }) {
             )}
           </div>
           <div className={styles.thumbGrid}>
-            {allImages.map((img, i) => (
+            {allImages.map((img: string, i: number) => (
               <div 
                 key={i} 
                 className={`${styles.thumbItem} ${activeImg === img ? styles.activeThumb : ''}`}
