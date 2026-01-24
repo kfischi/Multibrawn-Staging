@@ -11,98 +11,111 @@ interface Property {
   heroImage: string;
   priceRange?: string;
   capacity?: number;
-  bedrooms?: number;
 }
 
 const properties = propertiesData as Property[];
 
-export default function HighEndSelectedPage() {
+export default function LuxurySelectedPage() {
   return (
-    <div className="min-h-screen bg-[#0a0a0a] text-[#f4f4f4] font-sans selection:bg-amber-500/30" dir="rtl">
+    <div className="min-h-screen bg-[#050505] text-[#e5e5e5] font-sans selection:bg-amber-500/30" dir="rtl">
       
-      {/* Decorative Background Elements */}
-      <div className="fixed inset-0 overflow-hidden pointer-events-none">
-        <div className="absolute top-[-10%] left-[-10%] w-[40%] h-[40%] bg-amber-900/10 blur-[120px] rounded-full"></div>
-        <div className="absolute bottom-[-10%] right-[-10%] w-[40%] h-[40%] bg-amber-900/10 blur-[120px] rounded-full"></div>
+      {/* Background Ambient Glow */}
+      <div className="fixed inset-0 pointer-events-none">
+        <div className="absolute top-[-20%] left-[-10%] w-[600px] h-[600px] bg-amber-900/10 blur-[150px] rounded-full opacity-50"></div>
+        <div className="absolute bottom-[-10%] right-[0%] w-[500px] h-[500px] bg-slate-800/20 blur-[130px] rounded-full opacity-30"></div>
       </div>
 
-      {/* --- HERO HEADER --- */}
-      <header className="relative pt-40 pb-24 px-6 text-center z-10">
-        <span className="block text-amber-500 font-bold tracking-[0.4em] uppercase text-sm mb-6 animate-fade-in">
-          Curated Excellence
-        </span>
-        <h1 className="text-6xl md:text-9xl font-black tracking-tighter mb-8 bg-gradient-to-b from-white to-white/40 bg-clip-text text-transparent italic">
-          THE <span className="not-italic text-white">SELECTED</span>
-        </h1>
-        <div className="max-w-2xl mx-auto h-[1px] bg-gradient-to-r from-transparent via-amber-500/50 to-transparent mb-8"></div>
-        <p className="text-xl md:text-2xl text-gray-400 font-light max-w-3xl mx-auto leading-relaxed italic">
-          "היוקרה אינה צעקנית, היא נוכחת." <br/>
-          אוסף הנכסים האקסקלוסיבי של Multibrawn למי שמחפש את הבלתי רגיל.
-        </p>
+      {/* --- ELITE HEADER --- */}
+      <header className="relative pt-48 pb-32 px-6 z-10 max-w-7xl mx-auto">
+        <div className="flex flex-col items-start">
+          <div className="flex items-center gap-4 mb-8 animate-pulse">
+            <span className="h-[1px] w-12 bg-amber-500"></span>
+            <span className="text-amber-500 font-bold tracking-[0.5em] uppercase text-xs">Premium Collection</span>
+          </div>
+          <h1 className="text-7xl md:text-[10rem] font-black tracking-tighter leading-[0.8] mb-12">
+            THE<br/>
+            <span className="text-transparent bg-clip-text bg-gradient-to-l from-white via-white to-white/20">SELECTED</span>
+          </h1>
+          <p className="text-2xl md:text-3xl font-light text-gray-400 max-w-2xl leading-relaxed italic">
+            "השלמות נמצאת בפרטים הקטנים. האוסף שלנו הוא לא רק מקום לישון בו, הוא יצירת אמנות של אירוח."
+          </p>
+        </div>
       </header>
 
-      {/* --- LUXURY GRID --- */}
-      <main className="relative z-10 max-w-[1600px] mx-auto px-6 pb-40">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-20 md:gap-32">
+      {/* --- ASYMMETRIC LUXURY GRID --- */}
+      <main className="relative z-10 max-w-[1600px] mx-auto px-6 pb-60">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-40">
           {properties.map((item, index) => (
             <Link 
               href={`/selected/${item.slug}`} 
               key={item.id}
-              className={`group relative block ${index % 2 !== 0 ? 'md:mt-32' : ''}`}
+              className={`group relative flex flex-col ${index % 2 !== 0 ? 'md:translate-y-48' : ''}`}
             >
-              <div className="relative aspect-[16/11] overflow-hidden rounded-2xl shadow-2xl transition-all duration-700">
-                {/* Image with Parallax-like Effect */}
+              {/* Image Canvas */}
+              <div className="relative aspect-[16/12] overflow-hidden rounded-sm shadow-[0_50px_100px_-20px_rgba(0,0,0,0.8)]">
                 <img 
                   src={item.heroImage} 
-                  className="w-full h-full object-cover transition-transform duration-[2s] ease-out group-hover:scale-110" 
+                  className="w-full h-full object-cover transition-transform duration-[2.5s] cubic-bezier(0.16, 1, 0.3, 1) group-hover:scale-110" 
                   alt={item.name} 
                 />
                 
-                {/* Sophisticated Overlays */}
-                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-60 group-hover:opacity-80 transition-opacity duration-500" />
-                <div className="absolute inset-0 border border-white/10 m-4 rounded-xl pointer-events-none group-hover:m-2 transition-all duration-500" />
-
-                {/* Floating Tags */}
-                <div className="absolute top-8 left-8 flex flex-col gap-2">
-                  <span className="bg-black/40 backdrop-blur-md border border-white/10 px-4 py-1 rounded-full text-[10px] font-bold tracking-widest uppercase">
-                    Verified Asset
-                  </span>
-                </div>
-              </div>
-
-              {/* Text Content - Off-grid Positioning */}
-              <div className="mt-8 md:-mt-12 md:mr-12 relative z-20">
-                <div className="inline-block px-4 py-1 bg-amber-500 text-black text-xs font-black uppercase mb-4 shadow-xl">
-                  {item.location}
-                </div>
-                <h2 className="text-4xl md:text-5xl font-extrabold mb-4 group-hover:text-amber-500 transition-colors duration-300 tracking-tight">
-                  {item.name}
-                </h2>
+                {/* Visual Depth Overlays */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-transparent to-transparent opacity-60 group-hover:opacity-40 transition-opacity duration-700" />
                 
-                {/* Quick Details */}
-                <div className="flex gap-6 text-gray-400 text-sm font-light italic">
-                   <span>{item.bedrooms || 8} חדרי שינה</span>
-                   <span>•</span>
-                   <span>{item.priceRange?.split('-')[0] || 'מ-₪1,650'}</span>
-                </div>
-
-                <div className="mt-6 flex items-center gap-4 group-hover:gap-6 transition-all duration-500">
-                  <span className="text-xs font-bold tracking-[0.3em] uppercase">גלה עוד</span>
-                  <div className="h-[1px] w-20 bg-amber-500/50 group-hover:w-32 transition-all duration-500"></div>
+                {/* Glass Card Info - Floating */}
+                <div className="absolute top-10 right-10 flex flex-col items-end gap-2">
+                   <div className="bg-black/20 backdrop-blur-xl border border-white/10 px-6 py-2 text-[10px] font-bold tracking-widest uppercase text-white shadow-2xl">
+                     {item.id}
+                   </div>
                 </div>
               </div>
+
+              {/* Content Box - Floating/Offset */}
+              <div className="mt-[-60px] mr-12 relative z-20 max-w-[80%]">
+                <div className="bg-white/5 backdrop-blur-3xl border border-white/10 p-10 shadow-2xl transition-all duration-500 group-hover:bg-white/10 group-hover:border-amber-500/30">
+                  <p className="text-amber-500 text-xs font-black tracking-[0.3em] uppercase mb-4">
+                    {item.location}
+                  </p>
+                  <h2 className="text-4xl md:text-5xl font-black mb-6 text-white group-hover:text-amber-400 transition-colors">
+                    {item.name}
+                  </h2>
+                  <div className="h-[1px] w-full bg-white/10 mb-6"></div>
+                  <div className="flex justify-between items-center text-sm font-light text-gray-400 italic">
+                    <span>חווית אירוח אקסקלוסיבית</span>
+                    <span className="text-white font-bold not-italic">{item.priceRange?.split('-')[0] || 'מ-₪1,650'}</span>
+                  </div>
+                  
+                  {/* Luxury CTA Link */}
+                  <div className="mt-8 flex items-center gap-4 text-xs font-bold tracking-widest uppercase">
+                    <span>EXPLORE ASSET</span>
+                    <div className="h-[1px] w-12 bg-amber-500 group-hover:w-24 transition-all duration-700"></div>
+                  </div>
+                </div>
+              </div>
+
+              {/* Background Large Number */}
+              <span className="absolute -top-20 -left-10 text-[15rem] font-black text-white/[0.02] pointer-events-none select-none">
+                0{index + 1}
+              </span>
             </Link>
           ))}
         </div>
       </main>
 
-      {/* --- ELEGANT FOOTER --- */}
-      <footer className="relative z-10 py-32 bg-white/5 backdrop-blur-sm border-t border-white/10 text-center">
-        <h2 className="text-4xl font-black mb-8 opacity-20 tracking-[1em] uppercase">Multibrawn</h2>
-        <p className="text-gray-500 text-sm font-light italic max-w-md mx-auto">
-          התוכן והנכסים המופיעים באתר זה הם בבעלות בלעדית של מולטיבראון. כל הזכויות שמורות 2026.
-        </p>
+      {/* --- CINEMATIC FOOTER --- */}
+      <footer className="relative z-10 py-40 border-t border-white/5 text-center">
+        <div className="max-w-4xl mx-auto px-6">
+          <h3 className="text-2xl font-light italic mb-12 text-gray-400 leading-relaxed">
+            "We don't just find properties. We curate emotions."
+          </h3>
+          <div className="flex justify-center gap-20 opacity-20 hover:opacity-100 transition-opacity duration-1000">
+            <span className="text-xs font-bold tracking-[1em] uppercase">Elegance</span>
+            <span className="text-xs font-bold tracking-[1em] uppercase">Privacy</span>
+            <span className="text-xs font-bold tracking-[1em] uppercase">Service</span>
+          </div>
+        </div>
       </footer>
+
     </div>
   );
 }
