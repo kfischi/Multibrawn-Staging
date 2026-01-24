@@ -5,7 +5,7 @@
     "name": "סוויטת בוטיק יוקרתית עם בריכה פרטית מחוממת וג'קוזי ספא במרום הגליל",
     "type": "zimmer",
     "location": "ספסופה, גליל עליון",
-    "region": "צפון",
+    "region": "north",
     "heroImage": "https://res.cloudinary.com/dptyfvwyo/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_1.jpg",
     "gallery": [
       "https://res.cloudinary.com/dptyfvwyo/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_2.jpg",
@@ -13,12 +13,9 @@
       "https://res.cloudinary.com/dptyfvwyo/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_4.jpg",
       "https://res.cloudinary.com/dptyfvwyo/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_5.jpg"
     ],
-    "description": "חוויית אירוח יוקרתית ואינטימית בסוויטה מעוצבת הכוללת בריכה פרטית מחוממת ומקורה, ג'קוזי ספא ענק ופרטיות מוחלטת מול נופי הגליל העליון.",
-    "highlights": [
-      "בריכה פרטית מחוממת ומקורה",
-      "ג'קוזי ספא חיצוני מפנק",
-      "פרטיות מוחלטת לזוגות"
-    ],
+    "description": "חוויית אירוח יוקרתית ואינטימית בסוויטה מעוצבת הכוללת בריכה פרטית מחוממת ומקורה.",
+    "capacity": 2,
+    "bedrooms": 1,
     "priceRange": "₪1200-1800",
     "affiliateLink": "https://www.tzimer360.co.il/Location/C4671?t=affiliate26"
   }
