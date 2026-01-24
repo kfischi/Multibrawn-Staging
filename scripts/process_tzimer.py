@@ -17,7 +17,7 @@ from pathlib import Path
 # ==================== CONFIG ====================
 
 REPO_ROOT = Path(__file__).parent.parent
-PROPERTIES_JSON = REPO_ROOT / "src/data/properties.json"
+PROPERTIES_JSON = REPO_ROOT / "src/data/selected-pilot.json"
 AFFILIATE_LINKS = REPO_ROOT / "affiliate-links.txt"
 PROPERTIES_DIR = REPO_ROOT / "src/app/(marketing)/properties"
 MOCKUPS_DIR = REPO_ROOT / "public/mockups"
