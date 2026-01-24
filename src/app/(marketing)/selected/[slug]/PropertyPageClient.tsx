@@ -1,9 +1,27 @@
 'use client';
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 
 export default function PropertyPageClient({ property }: { property: any }) {
-  const [mainImg, setMainImg] = useState(property?.heroImage || '');
-  if (!property) return <div style={{ padding: '50px', textAlign: 'center' }}>טוען נתונים...</div>;
+  // פונקציה לוודא שהלינק תקין ולא "נדבק" לדומיין של האתר
+  const cleanUrl = (url: string) => {
+    if (!url) return '';
+    if (url.startsWith('http')) return url;
+    return `https://res.cloudinary.com/decirk3zb/image/upload/f_auto,q_auto/v1/affiliate-properties/${url.split('/').pop()}`;
+  };
+
+  const [mainImg, setMainImg] = useState('');
+
+  useEffect(() => {
+    if (property?.heroImage) {
+      setMainImg(cleanUrl(property.heroImage));
+    }
+  }, [property]);
+
+  if (!property) return <div style={{ padding: '100px', textAlign: 'center' }}>טוען נתונים...</div>;
+
+  const images = [property.heroImage, ...(property.gallery || [])]
+    .filter(Boolean)
+    .map(img => cleanUrl(img));
 
   return (
     <div style={{ maxWidth: '1100px', margin: '0 auto', padding: '40px 20px', fontFamily: 'sans-serif' }} dir="rtl">
@@ -12,12 +30,30 @@ export default function PropertyPageClient({ property }: { property: any }) {
 
       {/* גלריה */}
       <div style={{ marginBottom: '40px' }}>
-        <div style={{ width: '100%', height: '500px', borderRadius: '20px', overflow: 'hidden', backgroundColor: '#eee' }}>
-          <img src={mainImg} style={{ width: '100%', height: '100%', objectFit: 'cover' }} />
+        <div style={{ width: '100%', height: '500px', borderRadius: '20px', overflow: 'hidden', backgroundColor: '#f0f0f0' }}>
+          {mainImg && (
+            <img 
+              src={mainImg} 
+              alt={property.name} 
+              style={{ width: '100%', height: '100%', objectFit: 'cover' }}
+              onError={(e) => {
+                console.error("Failed to load:", mainImg);
+                (e.target as HTMLImageElement).src = 'https://placehold.co/800x500?text=Image+Not+Found';
+              }}
+            />
+          )}
         </div>
         <div style={{ display: 'flex', gap: '10px', marginTop: '15px', overflowX: 'auto' }}>
-          {[property.heroImage, ...(property.gallery || [])].map((img, i) => (
-            <img key={i} src={img} onClick={() => setMainImg(img)} style={{ width: '120px', height: '80px', borderRadius: '10px', cursor: 'pointer', objectFit: 'cover', border: mainImg === img ? '3px solid black' : 'none' }} />
+          {images.map((img, i) => (
+            <img 
+              key={i} 
+              src={img} 
+              onClick={() => setMainImg(img)} 
+              style={{ 
+                width: '120px', height: '80px', borderRadius: '10px', cursor: 'pointer', 
+                objectFit: 'cover', border: mainImg === img ? '3px solid black' : '1px solid #ddd' 
+              }} 
+            />
           ))}
         </div>
       </div>
@@ -45,7 +81,6 @@ export default function PropertyPageClient({ property }: { property: any }) {
           </section>
         </div>
 
-        {/* תיבת CTA */}
         <div style={{ height: 'fit-content', position: 'sticky', top: '20px', padding: '30px', border: '1px solid #eee', borderRadius: '25px', boxShadow: '0 10px 30px rgba(0,0,0,0.05)' }}>
           <div style={{ fontSize: '1.8rem', fontWeight: 'bold' }}>{property.priceRange}</div>
           <p style={{ color: '#666' }}>מחיר ממוצע ללילה</p>
