@@ -1,17 +1,25 @@
 [
   {
-    "id": "C4652",
-    "slug": "boutique-design-suite-north",
-    "name": "אחוזת העיצוב המודרני - סוויטות בוטיק",
-    "type": "villa",
-    "location": "גליל מערבי",
-    "region": "north",
-    "heroImage": "https://res.cloudinary.com/decirk3zb/image/upload/v1/affiliate-properties/C4652-1.jpg",
-    "priceRange": "₪1,400 - ₪2,200",
-    "capacity": 4,
-    "bedrooms": 2,
-    "featured": true,
-    "rating": 4.9,
-    "reviewsCount": 8
+    "id": "north-zimmer-romantic-339281",
+    "slug": "north-zimmer-romantic-339281",
+    "name": "סוויטת בוטיק יוקרתית עם בריכה פרטית מחוממת וג'קוזי ספא במרום הגליל",
+    "type": "zimmer",
+    "location": "ספסופה, גליל עליון",
+    "region": "צפון",
+    "heroImage": "https://res.cloudinary.com/dptyfvwyo/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_1.jpg",
+    "gallery": [
+      "https://res.cloudinary.com/dptyfvwyo/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_2.jpg",
+      "https://res.cloudinary.com/dptyfvwyo/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_3.jpg",
+      "https://res.cloudinary.com/dptyfvwyo/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_4.jpg",
+      "https://res.cloudinary.com/dptyfvwyo/image/upload/f_auto,q_auto/v1/affiliate-properties/C4671_5.jpg"
+    ],
+    "description": "חוויית אירוח יוקרתית ואינטימית בסוויטה מעוצבת הכוללת בריכה פרטית מחוממת ומקורה, ג'קוזי ספא ענק ופרטיות מוחלטת מול נופי הגליל העליון.",
+    "highlights": [
+      "בריכה פרטית מחוממת ומקורה",
+      "ג'קוזי ספא חיצוני מפנק",
+      "פרטיות מוחלטת לזוגות"
+    ],
+    "priceRange": "₪1200-1800",
+    "affiliateLink": "https://www.tzimer360.co.il/Location/C4671?t=affiliate26"
   }
 ]
