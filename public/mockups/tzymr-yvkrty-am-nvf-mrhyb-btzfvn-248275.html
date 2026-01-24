@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="he" dir="rtl">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>צימר יוקרתי עם נוף מרהיב בצפון - MULTIBRAWN</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css">
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+    body { font-family: 'Assistant', sans-serif; background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); min-height: 100vh; padding: 20px; }
+    .container { max-width: 900px; margin: 0 auto; background: white; border-radius: 30px; overflow: hidden; box-shadow: 0 20px 60px rgba(0,0,0,0.3); }
+    .header { background: linear-gradient(135deg, #00E0FF 0%, #A06BFF 50%, #FF5EA1 100%); padding: 40px; text-align: center; color: white; }
+    .header h1 { font-size: 2.5em; margin-bottom: 10px; }
+    .header p { font-size: 1.2em; opacity: 0.9; }
+    .swiper { width: 100%; height: 500px; }
+    .swiper-slide img { width: 100%; height: 100%; object-fit: cover; }
+    .content { padding: 40px; }
+    .info-cards { display: grid; grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); gap: 20px; margin: 30px 0; }
+    .info-card { background: linear-gradient(135deg, #667eea 0%, #764ba2 100%); color: white; padding: 20px; border-radius: 15px; text-align: center; }
+    .info-card .number { font-size: 2em; font-weight: bold; }
+    .info-card .label { opacity: 0.9; margin-top: 5px; }
+    .description { line-height: 1.8; color: #333; margin: 20px 0; }
+    .features { display: grid; grid-template-columns: repeat(auto-fit, minmax(200px, 1fr)); gap: 15px; margin: 30px 0; }
+    .feature-item { padding: 15px; background: #f8f9ff; border-radius: 10px; }
+    .price-section { background: linear-gradient(135deg, #00E0FF 0%, #A06BFF 100%); color: white; padding: 30px; border-radius: 20px; text-align: center; margin: 30px 0; }
+    .price { font-size: 3em; font-weight: bold; }
+    .cta-button { background: white; color: #667eea; padding: 20px 40px; border-radius: 50px; font-size: 1.2em; font-weight: bold; text-decoration: none; display: inline-block; margin-top: 20px; transition: transform 0.3s; }
+    .cta-button:hover { transform: scale(1.05); }
+    .footer { text-align: center; padding: 30px; background: #f8f9ff; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <div class="header">
+      <h1>צימר יוקרתי עם נוף מרהיב בצפון</h1>
+      <p>נכס נופש מדהים • צפון</p>
+    </div>
+
+    <div class="swiper">
+      <div class="swiper-wrapper">
+        <div class="swiper-slide"><img src="https://tours.tzimer360.co.il/Images\לה וילה מעודכן\R0020056_HDR-Edit_still_1229_793.webp" loading="lazy" /></div>
+<div class="swiper-slide"><img src="https://tours.tzimer360.co.il/Images\לה וילה מעודכן\R0020053_HDR-Edit_still_1229_793.webp" loading="lazy" /></div>
+<div class="swiper-slide"><img src="https://tours.tzimer360.co.il/Images\לה וילה מעודכן\R0020068_HDR-Edit_still_1229_793.webp" loading="lazy" /></div>
+<div class="swiper-slide"><img src="https://tours.tzimer360.co.il/Images\לה וילה מעודכן\R0020059_HDR-Edit_still_1229_793.webp" loading="lazy" /></div>
+<div class="swiper-slide"><img src="https://tours.tzimer360.co.il/Images\לה וילה מעודכן\R0020065_HDR-Edit_still_1229_793.webp" loading="lazy" /></div>
+      </div>
+      <div class="swiper-pagination"></div>
+      <div class="swiper-button-next"></div>
+      <div class="swiper-button-prev"></div>
+    </div>
+
+    <div class="content">
+      <div class="info-cards">
+        <div class="info-card">
+          <div class="number">4</div>
+          <div class="label">אורחים</div>
+        </div>
+        <div class="info-card">
+          <div class="number">2</div>
+          <div class="label">חדרי שינה</div>
+        </div>
+        <div class="info-card">
+          <div class="number">4.8</div>
+          <div class="label">דירוג</div>
+        </div>
+      </div>
+
+      <div class="description">
+        <p>נכס נופש מדהים</p>
+      </div>
+
+      <div class="features">
+        <div class="feature-item">✓ נוף מרהיב</div>
+<div class="feature-item">✓ שקט ופרטיות</div>
+      </div>
+
+      <div class="price-section">
+        <div class="price">₪1200</div>
+        <div>ללילה</div>
+        <a href="https://www.tzimer360.co.il/Location/C4658?t=affiliate26" target="_blank" class="cta-button">
+          🔗 הזמן עכשיו
+        </a>
+      </div>
+    </div>
+
+    <div class="footer">
+      <p>© 2025 MULTIBRAWN - כל הזכויות שמורות</p>
+    </div>
+  </div>
+
+  <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+  <script>
+    new Swiper('.swiper', {
+      effect: 'fade',
+      loop: true,
+      autoplay: { delay: 3000 },
+      pagination: { el: '.swiper-pagination', clickable: true },
+      navigation: { nextEl: '.swiper-button-next', prevEl: '.swiper-button-prev' },
+      lazy: true
+    });
+  </script>
+</body>
+</html>
