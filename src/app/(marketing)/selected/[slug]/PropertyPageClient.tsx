@@ -5,70 +5,63 @@ import Image from 'next/image';
 import styles from './PropertyPage.module.css';
 
 export default function PropertyPageClient({ property }: { property: any }) {
-  // הגדרת תמונה ראשית כטקסט
-  const hero: string = property?.heroImage || '';
-  const [activeImg, setActiveImg] = useState<string>(hero);
-  
-  // הגדרת הגלריה כמערך של טקסטים
-  const gallery: string[] = Array.isArray(property?.gallery) ? property.gallery : [];
-  const allImages: string[] = hero ? [hero, ...gallery] : gallery;
-
-  // הגדרת מערכי טקסט בטוחים
-  const highlights: string[] = Array.isArray(property?.highlights) ? property.highlights : [];
+  const [activeImg, setActiveImg] = useState<string>(property?.heroImage || '');
+  const allImages: string[] = [property?.heroImage, ...(property?.gallery || [])].filter(Boolean);
 
   if (!property) return <div className="p-20 text-center">נכס לא נמצא</div>;
 
   return (
     <div className={styles.container} dir="rtl">
-      <div className={styles.contentWrapper}>
-        <div className={styles.galleryContainer}>
-          <div className={styles.mainImageFrame}>
-            {activeImg && (
-              <Image 
-                src={activeImg.replace('/upload/', '/upload/f_auto,q_auto/')} 
-                alt={property.name || 'Property'} 
-                fill 
-                className={styles.mainImage}
-                priority
-              />
-            )}
-          </div>
-          <div className={styles.thumbGrid}>
-            {allImages.map((img: string, i: number) => (
-              <div 
-                key={i} 
-                className={`${styles.thumbItem} ${activeImg === img ? styles.activeThumb : ''}`}
-                onClick={() => setActiveImg(img)}
-              >
-                <Image src={img.replace('/upload/', '/upload/w_200,f_auto,q_auto/')} alt="" fill />
-              </div>
-            ))}
-          </div>
+      {/* גלריה מרכזית */}
+      <section className={styles.heroSection}>
+        <div className={styles.mainImageContainer}>
+          <Image 
+            src={activeImg} 
+            alt={property.name} 
+            fill 
+            className={styles.mainImage}
+            priority
+            style={{ objectFit: 'cover' }}
+          />
         </div>
+        <div className={styles.thumbnailsGrid}>
+          {allImages.map((img, i) => (
+            <div 
+              key={i} 
+              className={`${styles.thumbWrapper} ${activeImg === img ? styles.activeThumb : ''}`}
+              onClick={() => setActiveImg(img)}
+            >
+              <Image src={img} alt="" fill style={{ objectFit: 'cover' }} />
+            </div>
+          ))}
+        </div>
+      </section>
 
-        <div className={styles.detailsSide}>
-          <h1 className={styles.title}>{property.name || 'נכס יוקרתי'}</h1>
-          <p className={styles.location}>{property.location}</p>
-          <div className={styles.price}>{property.priceRange} <span>/ לילה</span></div>
+      {/* מידע על הנכס */}
+      <div className={styles.detailsContent}>
+        <div className={styles.mainDetails}>
+          <h1 className={styles.propertyTitle}>{property.name}</h1>
+          <p className={styles.locationLabel}>📍 {property.location}</p>
           
-          <div className={styles.description}>
+          <div className={styles.infoGrid}>
+            <div className={styles.infoItem}>👥 עד {property.capacity} אורחים</div>
+            <div className={styles.infoItem}>🛏️ {property.bedrooms} חדרים</div>
+            <div className={styles.infoItem}>💰 {property.priceRange}</div>
+          </div>
+
+          <div className={styles.descriptionText}>
             <h3>על המקום</h3>
             <p>{property.description}</p>
           </div>
+        </div>
 
-          {highlights.length > 0 && (
-            <div className={styles.features}>
-              <h3>נקודות בולטות</h3>
-              <ul>{highlights.map((h: string, i: number) => <li key={i}>✨ {h}</li>)}</ul>
-            </div>
-          )}
-
-          <div className={styles.ctaBox}>
-            <a href={property.affiliateLink} target="_blank" rel="noopener noreferrer" className={styles.ctaButton}>
-              בדוק זמינות והזמן עכשיו
-            </a>
-            <p className={styles.disclaimer}>* לחיצה תעביר אתכם לאתר חיצוני</p>
-          </div>
+        {/* תיבת הזמנה - CTA */}
+        <div className={styles.bookingCard}>
+          <div className={styles.cardPrice}>{property.priceRange} <span>/ לילה</span></div>
+          <a href={property.affiliateLink} target="_blank" rel="noopener noreferrer" className={styles.bookingButton}>
+            בדוק זמינות והזמן עכשיו
+          </a>
+          <p className={styles.bookingNote}>* המעבר לאתר צימר 360 להשלמת ההזמנה</p>
         </div>
       </div>
     </div>
