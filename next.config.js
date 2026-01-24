@@ -4,11 +4,21 @@ const nextConfig = {
     remotePatterns: [
       {
         protocol: 'https',
-        hostname: 'MultibrawnWEB.b-cdn.net', // הכתובת החדשה שלך
+        hostname: 'MultibrawnWEB.b-cdn.net',
         pathname: '/**',
       },
-      // ... שאר הכתובות
+      {
+        protocol: 'https',
+        hostname: 'tours.tzimer360.co.il',
+        pathname: '/**',
+      },
+      {
+        protocol: 'https',
+        hostname: 'res.cloudinary.com',
+        pathname: '/**',
+      },
     ],
   },
 };
+
 export default nextConfig;
