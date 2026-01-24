@@ -3,93 +3,73 @@ import React from 'react';
 import Link from 'next/link';
 import propertiesData from '@/data/selected-pilot.json';
 
-// הגדרת המבנה של הנכס
 interface Property {
   id: string;
   slug: string;
   name: string;
   location: string;
   heroImage: string;
-  description?: string;
-  priceRange?: string;
 }
 
 const properties = propertiesData as Property[];
 
-export default function NetflixGalleryPage() {
-  const featured = properties[0];
-
+export default function LuxurySelectedPage() {
   return (
-    <div className="min-h-screen bg-[#141414] text-white font-sans pt-24 pb-12" dir="rtl">
+    <div className="min-h-screen bg-black text-white font-sans" dir="rtl">
       
-      {/* Hero Featured Section */}
-      {featured && (
-        <section className="relative h-[70vh] w-full mb-12 px-6 md:px-12">
-          <div className="absolute inset-0 rounded-3xl overflow-hidden">
-            <img 
-              src={featured.heroImage} 
-              className="w-full h-full object-cover opacity-60" 
-              alt={featured.name} 
-            />
-            <div className="absolute inset-0 bg-gradient-to-r from-[#141414] via-transparent to-transparent" />
-          </div>
-          
-          <div className="relative z-10 h-full flex flex-col justify-center max-w-2xl">
-            <span className="text-amber-500 font-bold tracking-widest mb-4 uppercase text-sm">נבחר עבורך</span>
-            <h1 className="text-5xl md:text-7xl font-black mb-6 tracking-tighter leading-tight">
-              {featured.name}
-            </h1>
-            <p className="text-lg md:text-xl text-gray-300 mb-8 line-clamp-3 font-light leading-relaxed">
-              {featured.description || "חוויית נופש יוקרתית במיקום המושלם. נכס נבחר מרשימת ה-Selected של Multibrawn."}
-            </p>
-            <div className="flex gap-4">
-              <Link 
-                href={`/selected/${featured.slug}`} 
-                className="bg-white text-black px-10 py-4 rounded-md font-bold hover:bg-gray-200 transition-all text-lg shadow-xl"
-              >
-                פרטים נוספים
-              </Link>
-            </div>
-          </div>
-        </section>
-      )}
+      {/* Header - נקי ומינימליסטי כמו בגלריה */}
+      <header className="pt-32 pb-16 px-6 text-center">
+        <h1 className="text-5xl md:text-7xl font-light tracking-widest uppercase mb-4">
+          The <span className="font-black text-amber-500">Selected</span>
+        </h1>
+        <div className="h-1 w-24 bg-amber-500 mx-auto mb-6"></div>
+        <p className="text-gray-400 text-lg max-w-2xl mx-auto font-light italic">
+          אוצרות של חוויות אירוח ועיצוב. כל נכס נבחר בקפידה כדי להבטיח את הסטנדרט של Multibrawn.
+        </p>
+      </header>
 
-      {/* Netflix-Style Slider Section */}
-      <section className="space-y-8">
-        <div className="px-6 md:px-12">
-          <h2 className="text-2xl font-bold mb-6 hover:text-amber-500 transition-colors cursor-pointer inline-block border-r-4 border-amber-500 pr-4 uppercase tracking-tighter">
-            הקולקציה הנבחרת - SELECTED
-          </h2>
-          
-          <div className="flex gap-5 overflow-x-auto no-scrollbar pb-12 pt-4 scroll-smooth">
-            {properties.map((item) => (
-              <Link 
-                href={`/selected/${item.slug}`} 
-                key={item.id}
-                className="min-w-[300px] md:min-w-[440px] relative aspect-video rounded-xl overflow-hidden transition-all duration-500 hover:scale-105 hover:z-20 shadow-[0_20px_50px_rgba(0,0,0,0.5)] group"
-              >
+      {/* Grid - גריד יוקרתי עם מרווחים נכונים */}
+      <main className="max-w-[1400px] mx-auto px-6 pb-32">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-12">
+          {properties.map((item) => (
+            <Link 
+              href={`/selected/${item.slug}`} 
+              key={item.id}
+              className="group relative block overflow-hidden rounded-sm"
+            >
+              {/* Image Container */}
+              <div className="relative aspect-[16/10] overflow-hidden">
                 <img 
                   src={item.heroImage} 
-                  className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" 
+                  className="w-full h-full object-cover transition-transform duration-[1.5s] ease-out group-hover:scale-110 grayscale-[30%] group-hover:grayscale-0" 
                   alt={item.name} 
                 />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/90 via-black/20 to-transparent opacity-80 group-hover:opacity-100 transition-opacity flex flex-col justify-end p-6">
-                  <h3 className="font-bold text-xl mb-1">{item.name}</h3>
-                  <div className="flex justify-between items-center">
-                    <p className="text-sm text-amber-400 font-medium">{item.location}</p>
-                    <span className="text-xs bg-white/10 px-2 py-1 rounded backdrop-blur-md">פרטים נוספים</span>
-                  </div>
-                </div>
-              </Link>
-            ))}
-          </div>
-        </div>
-      </section>
+                {/* Overlay - גרדיאנט עמוק יותר */}
+                <div className="absolute inset-0 bg-gradient-to-t from-black via-black/20 to-transparent opacity-80 transition-opacity duration-500 group-hover:opacity-90" />
+              </div>
 
-      <style jsx global>{`
-        .no-scrollbar::-webkit-scrollbar { display: none; }
-        .no-scrollbar { -ms-overflow-style: none; scrollbar-width: none; }
-      `}</style>
+              {/* Content Overlay */}
+              <div className="absolute bottom-0 right-0 left-0 p-8 transform transition-transform duration-500 translate-y-2 group-hover:translate-y-0">
+                <p className="text-amber-500 text-sm font-bold tracking-[0.2em] mb-2 uppercase">
+                  {item.location}
+                </p>
+                <h2 className="text-3xl md:text-4xl font-bold mb-4 tracking-tight">
+                  {item.name}
+                </h2>
+                <div className="flex items-center gap-4 opacity-0 group-hover:opacity-100 transition-opacity duration-700 delay-100">
+                  <span className="h-[1px] w-12 bg-white"></span>
+                  <span className="text-xs uppercase tracking-widest">צפייה בנכס</span>
+                </div>
+              </div>
+            </Link>
+          ))}
+        </div>
+      </main>
+
+      {/* Footer Branding */}
+      <footer className="py-20 border-t border-white/10 text-center">
+        <p className="text-white/20 text-sm tracking-[0.5em] uppercase">Multibrawn Premium Collection</p>
+      </footer>
     </div>
   );
 }
