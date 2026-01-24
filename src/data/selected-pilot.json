@@ -1,34 +1,47 @@
 [
   {
-    "id": "dead-sea-provence-339281",
-    "slug": "dead-sea-provence-339281",
-    "name": "סוויטות יוקרה פרובנס ים המלח - בריכה פרטית מול נופי אדום",
-    "type": "zimmer",
-    "location": "נווה זוהר, ים המלח",
-    "region": "south",
-    "heroImage": "https://multibrawn.b-cdn.net/C4671_1.jpg",
-    "gallery": [
-      "https://multibrawn.b-cdn.net/C4671_2.jpg",
-      "https://multibrawn.b-cdn.net/C4671_3.jpg",
-      "https://multibrawn.b-cdn.net/C4671_4.jpg",
-      "https://multibrawn.b-cdn.net/C4671_5.jpg"
+    "id": "C4652",
+    "slug": "boutique-design-suite-north",
+    "name": "אחוזת העיצוב המודרני - סוויטות בוטיק",
+    "type": "villa",
+    "location": "גליל מערבי",
+    "region": "north",
+    "heroImage": "https://MultibrawnWEB.b-cdn.net/R0020640_HDR-Edit%20-%20Copy_still_1229_793.webp",
+    "images": [
+      "https://MultibrawnWEB.b-cdn.net/R0020640_HDR-Edit%20-%20Copy_still_1229_793.webp",
+      "https://MultibrawnWEB.b-cdn.net/R0020641_HDR-Edit%20-%20Copy_still_1229_793.webp",
+      "https://MultibrawnWEB.b-cdn.net/R0020643_HDR-Edit_still_1229_793.webp",
+      "https://MultibrawnWEB.b-cdn.net/R0020646_HDR-Edit%20-%20Copy_still_1229_793.webp",
+      "https://MultibrawnWEB.b-cdn.net/R0020648_HDR-Edit%20-%20Copy_still_1229_793.webp",
+      "https://MultibrawnWEB.b-cdn.net/R0020666_HDR-Edit_still_1229_793.webp"
     ],
-    "description": "סוויטות יוקרה פרובנס בנווה זוהר מביאות את העיצוב הכפרי-יוקרתי אל לב הנוף המדברי. הסוויטות מציעות פרטיות מוחלטת עם בריכה פרטית, ג'קוזי ספא זרמים מפנק וחצר מטופחת מול הרי אדום.",
-    "longDescription": "הסוויטות מציעות אבזור מלא הכולל מיטה זוגית אורתופדית, מטבחון מאובזר, מכונת אספרסו ופינת ישיבה מעוצבת. מחוץ לסוויטה מחכה לכם מתחם פרטי הכולל בריכה (מחוממת בחורף), מיטות שיזוף וג'קוזי ספא, הכל תחת כיפת השמיים ובאווירה מדברית קסומה.",
-    "areaAttractions": [
-      "חופי ים המלח המוסדרים (2 דקות נסיעה)",
-      "גן לאומי מצדה - תצפית זריחה מרהיבה (15 דקות נסיעה)",
-      "נחל דוד ונחל ערוגות בשמורת עין גדי",
-      "טיולי ג'יפים וטרקטורונים במדבר יהודה"
+    "priceRange": "₪1,400 - ₪2,200",
+    "capacity": 4,
+    "bedrooms": 2,
+    "featured": true,
+    "rating": 4.9,
+    "reviewsCount": 8,
+    "description": "סוויטות בוטיק מעוצבות במיוחד עם עיצוב מודרני יוקרתי. המתחם כולל מרפסת פרטית, פינת ישיבה מעוצבת ונוף פנורמי מרהיב לגליל המערבי.",
+    "features": [
+      "עיצוב בוטיק מודרני",
+      "מרפסת פרטית",
+      "נוף פנורמי",
+      "פינת ישיבה מעוצבת"
     ],
-    "nearbyDining": [
-      "מרכז הקניות והמסעדות בעין בוקק",
-      "מסעדת 'טאג' מאהל' - חוויה מזרחית אותנטית",
-      "בתי קפה ופאבים באזור המלונות הסמוך"
+    "amenities": [
+      "Wi-Fi מהיר",
+      "מזגן",
+      "טלוויזיה חכמה",
+      "מטבח מאובזר",
+      "חניה פרטית"
     ],
-    "capacity": 2,
-    "bedrooms": 1,
-    "priceRange": "₪1200 - ₪1800",
-    "affiliateLink": "https://www.tzimer360.co.il/Location/C4671?t=affiliate26"
+    "contactPhone": "052-398-3394",
+    "checkIn": "15:00",
+    "checkOut": "11:00",
+    "minNights": 2,
+    "whatsapp": "972523983394",
+    "affiliateUrl": "https://www.tzimer360.co.il/Location/C4652?t=affiliate26",
+    "isFeatured": true,
+    "isAvailable": true
   }
 ]
