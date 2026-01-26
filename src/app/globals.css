@@ -233,3 +233,31 @@ body {
   from { transform: scale(1.05); }
   to { transform: scale(1); }
 }
+/* --- תיקון דחוף לתפריט ולתוכן --- */
+
+/* 1. מכריח את התפריט להיות הכי עליון */
+/* (מתאים לרוב הסוגים של תפריטים: nav, header, או class של navbar) */
+nav, header, .navbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 9999 !important; /* המספר הכי גבוה שאפשר */
+}
+
+/* 2. וידוא שהתוכן בהירו (הטקסט והכפתורים) מעל הוידאו */
+.hero-content {
+  position: relative;
+  z-index: 50 !important; /* מעל הוידאו וההצללה */
+  opacity: 1 !important;  /* לביטול מצב שהאנימציה מסתירה אותו */
+}
+
+/* 3. וידוא שהוידאו נשאר ברקע */
+.hero-section {
+  position: relative;
+  z-index: 1;
+}
+
+.video-bg {
+  z-index: -1 !important; /* דוחף את הוידאו אחורה */
+}
