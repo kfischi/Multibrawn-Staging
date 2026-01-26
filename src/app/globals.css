@@ -66,3 +66,33 @@ body {
   from { transform: scale(1.05); }
   to { transform: scale(1); }
 }
+
+/* --- CYBER AESTHETICS --- */
+
+/* טקסט כותרות עתידני */
+.font-cyber {
+  font-family: var(--font-orbitron);
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+}
+
+/* אפקט זוהר לטקסט */
+.text-glow {
+  text-shadow: 0 0 10px rgba(0, 243, 255, 0.5),
+               0 0 20px rgba(0, 243, 255, 0.3);
+}
+
+/* פאנל זכוכית כהה */
+.glass-panel {
+  background: rgba(10, 10, 10, 0.6);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+/* רקע רשת עדינה */
+.bg-grid {
+  background-size: 40px 40px;
+  background-image: linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
+                    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+}

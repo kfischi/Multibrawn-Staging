@@ -1,12 +1,24 @@
 import type { Metadata } from 'next';
-import { Inter } from 'next/font/google';
+import { Orbitron, Outfit } from 'next/font/google'; // טעינת הפונטים
 import { ViewTransitions } from 'next-view-transitions';
 import './globals.css';
 import AtmosphereBackground from '@/components/AtmosphereBackground';
 import SuperCloset from '@/components/SuperCloset';
 import CustomCursor from '@/components/CustomCursor';
+import LiquidNavbar from '@/components/LiquidNavbar';
 
-const inter = Inter({ subsets: ['latin'] });
+// הגדרת משקלי הפונטים
+const orbitron = Orbitron({ 
+  subsets: ['latin'],
+  variable: '--font-orbitron',
+  display: 'swap',
+});
+
+const outfit = Outfit({
+  subsets: ['latin'],
+  variable: '--font-outfit',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
   title: 'Multibrawn | Ultra Instinct',
@@ -21,9 +33,10 @@ export default function RootLayout({
   return (
     <ViewTransitions>
       <html lang="en" className="dark cursor-none"> 
-        <body className={`${inter.className} bg-black text-white antialiased overflow-x-hidden min-h-screen`}>
+        <body className={`${outfit.className} ${orbitron.variable} bg-brand-dark text-white antialiased overflow-x-hidden min-h-screen`}>
           <CustomCursor />
           <AtmosphereBackground />
+          <LiquidNavbar />
           
           <main className="relative z-10">
             {children}
