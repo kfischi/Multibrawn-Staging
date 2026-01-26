@@ -1,5 +1,5 @@
 import type { Metadata } from 'next';
-import { Orbitron, Outfit } from 'next/font/google'; // טעינת הפונטים
+import { Orbitron, Outfit } from 'next/font/google'; 
 import { ViewTransitions } from 'next-view-transitions';
 import './globals.css';
 import AtmosphereBackground from '@/components/AtmosphereBackground';
@@ -34,10 +34,23 @@ export default function RootLayout({
     <ViewTransitions>
       <html lang="en" className="dark cursor-none"> 
         <body className={`${outfit.className} ${orbitron.variable} bg-brand-dark text-white antialiased overflow-x-hidden min-h-screen`}>
-          <CustomCursor />
-          <AtmosphereBackground />
-          <LiquidNavbar />
           
+          {/* סמן עכבר מותאם אישית - תמיד עליון */}
+          <div className="relative z-[9999]">
+             <CustomCursor />
+          </div>
+
+          {/* רקע אטמוספרי - שכבה אחורית */}
+          <div className="fixed inset-0 z-0 pointer-events-none">
+            <AtmosphereBackground />
+          </div>
+          
+          {/* תיקון התפריט: עטיפה ב-Z-Index גבוה כדי שיהיה מעל הוידאו */}
+          <div className="relative z-[100]">
+            <LiquidNavbar />
+          </div>
+          
+          {/* התוכן הראשי */}
           <main className="relative z-10">
             {children}
           </main>
