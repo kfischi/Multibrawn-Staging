@@ -2,15 +2,12 @@
 
 import { useState } from 'react';
 import Image from 'next/image';
-import { Metadata } from 'next';
 import { 
   MapPin, Users, BedDouble, Bath, Star, Check, 
-  Wifi, Car, Utensils, Wind, Tv, Waves, 
-  Coffee, ShoppingBag, Trees, UtensilsCrossed,
-  Phone, MessageCircle, ExternalLink, ChevronLeft, ChevronRight
+  Wifi, Phone, MessageCircle, ExternalLink, ChevronLeft, ChevronRight,
+  Coffee, ShoppingBag, Trees, UtensilsCrossed, Waves, Car
 } from 'lucide-react';
 
-// Property data
 const property = {
   id: "netanya-sea-view-012626",
   slug: "elite-sea-view-netanya-012626",
@@ -82,7 +79,7 @@ export default function PropertyPage() {
   return (
     <div className="min-h-screen bg-gradient-to-b from-gray-50 to-white" dir="rtl">
       
-      {/* Hero Section with Image Gallery */}
+      {/* Hero Section */}
       <section className="relative h-[70vh] w-full bg-black">
         <div className="relative h-full w-full">
           <Image 
@@ -94,10 +91,8 @@ export default function PropertyPage() {
             quality={90}
           />
           
-          {/* Gradient Overlay */}
           <div className="absolute inset-0 bg-gradient-to-t from-black/60 via-transparent to-transparent" />
           
-          {/* Navigation Arrows */}
           <button 
             onClick={prevImage}
             className="absolute right-4 top-1/2 -translate-y-1/2 bg-white/20 backdrop-blur-md hover:bg-white/30 transition-all p-3 rounded-full"
@@ -111,12 +106,10 @@ export default function PropertyPage() {
             <ChevronLeft className="text-white" size={28} />
           </button>
           
-          {/* Image Counter */}
           <div className="absolute bottom-4 left-1/2 -translate-x-1/2 bg-black/50 backdrop-blur-md px-4 py-2 rounded-full text-white text-sm">
             {currentImage + 1} / {property.images.length}
           </div>
           
-          {/* Content Overlay */}
           <div className="absolute inset-0 flex items-end">
             <div className="container mx-auto px-6 pb-12">
               <div className="max-w-4xl">
@@ -135,7 +128,6 @@ export default function PropertyPage() {
           </div>
         </div>
         
-        {/* Thumbnail Gallery */}
         <div className="absolute bottom-20 right-6 flex gap-2">
           {property.images.map((img, idx) => (
             <button
@@ -155,10 +147,8 @@ export default function PropertyPage() {
       <div className="container mx-auto px-6 py-12">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           
-          {/* Left Column - Main Content */}
           <div className="lg:col-span-2 space-y-12">
             
-            {/* Quick Info Cards */}
             <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
               <div className="bg-white rounded-2xl p-6 shadow-lg hover:shadow-xl transition-all text-center border border-gray-100">
                 <Users className="mx-auto mb-3 text-blue-600" size={32} />
@@ -178,7 +168,6 @@ export default function PropertyPage() {
               </div>
             </div>
 
-            {/* Description */}
             <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
               <h2 className="text-3xl font-bold mb-6 text-gray-900">על המקום</h2>
               <p className="text-xl leading-relaxed text-gray-700">
@@ -186,7 +175,6 @@ export default function PropertyPage() {
               </p>
             </div>
 
-            {/* Features */}
             <div className="bg-gradient-to-br from-blue-50 to-cyan-50 rounded-3xl p-8 border border-blue-100">
               <h2 className="text-3xl font-bold mb-6 text-gray-900 flex items-center gap-3">
                 <Waves className="text-blue-600" />
@@ -210,7 +198,6 @@ export default function PropertyPage() {
               )}
             </div>
 
-            {/* Amenities */}
             <div className="bg-white rounded-3xl p-8 shadow-lg border border-gray-100">
               <h2 className="text-3xl font-bold mb-6 text-gray-900">מתקנים ושירותים</h2>
               <div className="grid grid-cols-2 md:grid-cols-3 gap-6">
@@ -225,59 +212,31 @@ export default function PropertyPage() {
               </div>
             </div>
 
-            {/* Area Guide */}
             <div className="bg-gradient-to-br from-purple-50 via-pink-50 to-orange-50 rounded-3xl p-8 border border-purple-100">
               <h2 className="text-3xl font-bold mb-8 text-gray-900 flex items-center gap-3">
                 <MapPin className="text-purple-600" />
-                מה יש לעשות בנתניה והסביבה? 🌊
+                מה יש לעשות בנתניה? 🌊
               </h2>
 
-              {/* Restaurants */}
               <div className="mb-8">
                 <h3 className="text-2xl font-bold mb-4 flex items-center gap-2 text-gray-800">
                   <UtensilsCrossed className="text-orange-600" />
                   מסעדות מומלצות
                 </h3>
                 <div className="grid md:grid-cols-2 gap-4">
-                  <div className="bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md transition-all">
-                    <h4 className="font-bold text-lg mb-2 text-gray-900">הרברט סמואל</h4>
-                    <p className="text-gray-600 text-sm mb-2">מסעדת שף יוקרתית על הטיילת עם נוף לים</p>
-                    <div className="flex items-center gap-4 text-sm">
-                      <span className="text-blue-600 font-medium">📍 5 דק׳ הליכה</span>
-                      <span className="text-yellow-600 font-medium">⭐ 4.7/5</span>
-                    </div>
+                  <div className="bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm">
+                    <h4 className="font-bold text-lg mb-2">הרברט סמואל</h4>
+                    <p className="text-gray-600 text-sm mb-2">מסעדת שף עם נוף לים</p>
+                    <span className="text-blue-600 font-medium text-sm">📍 5 דק׳ הליכה</span>
                   </div>
-                  
-                  <div className="bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md transition-all">
-                    <h4 className="font-bold text-lg mb-2 text-gray-900">מסעדת לידו</h4>
-                    <p className="text-gray-600 text-sm mb-2">איטלקית אותנטית, פיצות ופסטות ברמה גבוהה</p>
-                    <div className="flex items-center gap-4 text-sm">
-                      <span className="text-blue-600 font-medium">📍 8 דק׳ הליכה</span>
-                      <span className="text-yellow-600 font-medium">⭐ 4.6/5</span>
-                    </div>
-                  </div>
-
-                  <div className="bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md transition-all">
-                    <h4 className="font-bold text-lg mb-2 text-gray-900">השף של עמית</h4>
-                    <p className="text-gray-600 text-sm mb-2">מסעדת בשרים כשרה, תפריט עשיר</p>
-                    <div className="flex items-center gap-4 text-sm">
-                      <span className="text-blue-600 font-medium">📍 10 דק׳ נסיעה</span>
-                      <span className="text-yellow-600 font-medium">⭐ 4.8/5</span>
-                    </div>
-                  </div>
-
-                  <div className="bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm hover:shadow-md transition-all">
-                    <h4 className="font-bold text-lg mb-2 text-gray-900">מסעדת מרינה</h4>
-                    <p className="text-gray-600 text-sm mb-2">דגים ופירות ים טריים מול הים</p>
-                    <div className="flex items-center gap-4 text-sm">
-                      <span className="text-blue-600 font-medium">📍 7 דק׳ הליכה</span>
-                      <span className="text-yellow-600 font-medium">⭐ 4.5/5</span>
-                    </div>
+                  <div className="bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm">
+                    <h4 className="font-bold text-lg mb-2">מסעדת לידו</h4>
+                    <p className="text-gray-600 text-sm mb-2">איטלקית אותנטית</p>
+                    <span className="text-blue-600 font-medium text-sm">📍 8 דק׳ הליכה</span>
                   </div>
                 </div>
               </div>
 
-              {/* Attractions */}
               <div className="mb-8">
                 <h3 className="text-2xl font-bold mb-4 flex items-center gap-2 text-gray-800">
                   <Waves className="text-cyan-600" />
@@ -287,57 +246,36 @@ export default function PropertyPage() {
                   <div className="bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm">
                     <div className="text-3xl mb-2">🏖️</div>
                     <h4 className="font-bold text-lg mb-2">חופי נתניה</h4>
-                    <p className="text-gray-600 text-sm mb-2">חופים מטופחים עם טיילת יפהפייה</p>
-                    <span className="text-blue-600 font-medium text-sm">📍 5 דק׳ הליכה</span>
+                    <p className="text-gray-600 text-sm">טיילת יפהפייה</p>
                   </div>
-
                   <div className="bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm">
                     <div className="text-3xl mb-2">🏛️</div>
                     <h4 className="font-bold text-lg mb-2">ארמון פולג</h4>
-                    <p className="text-gray-600 text-sm mb-2">מתחם תרבות ואמנות מרהיב</p>
-                    <span className="text-blue-600 font-medium text-sm">📍 12 דק׳ נסיעה</span>
-                  </div>
-
-                  <div className="bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm">
-                    <div className="text-3xl mb-2">🌳</div>
-                    <h4 className="font-bold text-lg mb-2">גשר השלום</h4>
-                    <p className="text-gray-600 text-sm mb-2">נקודת תצפית מרהיבה ופארק</p>
-                    <span className="text-blue-600 font-medium text-sm">📍 8 דק׳ נסיעה</span>
-                  </div>
-
-                  <div className="bg-white/80 backdrop-blur-sm p-5 rounded-xl shadow-sm">
-                    <div className="text-3xl mb-2">🎭</div>
-                    <h4 className="font-bold text-lg mb-2">היכל התרבות</h4>
-                    <p className="text-gray-600 text-sm mb-2">הופעות, קולנוע ואירועי תרבות</p>
-                    <span className="text-blue-600 font-medium text-sm">📍 10 דק׳ נסיעה</span>
+                    <p className="text-gray-600 text-sm">תרבות ואמנות</p>
                   </div>
                 </div>
               </div>
 
-              {/* Local Tips */}
               <div className="bg-gradient-to-r from-purple-600 to-pink-600 rounded-2xl p-6 text-white">
-                <h3 className="text-2xl font-bold mb-4 flex items-center gap-2">
-                  <Coffee className="text-yellow-300" />
-                  טיפים מקומיים
-                </h3>
-                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm">
-                  <div className="flex flex-col items-center text-center">
-                    <Coffee size={24} className="mb-2 text-yellow-300" />
+                <h3 className="text-2xl font-bold mb-4">☕ טיפים מקומיים</h3>
+                <div className="grid grid-cols-2 md:grid-cols-4 gap-4 text-sm text-center">
+                  <div>
+                    <Coffee className="mx-auto mb-2" />
                     <p className="font-bold">קפה בוקר</p>
                     <p className="text-white/80">Aroma - 3 דק׳</p>
                   </div>
-                  <div className="flex flex-col items-center text-center">
-                    <ShoppingBag size={24} className="mb-2 text-yellow-300" />
+                  <div>
+                    <ShoppingBag className="mx-auto mb-2" />
                     <p className="font-bold">קניות</p>
                     <p className="text-white/80">BIG - 7 דק׳</p>
                   </div>
-                  <div className="flex flex-col items-center text-center">
-                    <Trees size={24} className="mb-2 text-yellow-300" />
+                  <div>
+                    <Trees className="mx-auto mb-2" />
                     <p className="font-bold">פארק</p>
                     <p className="text-white/80">גן המלך - 5 דק׳</p>
                   </div>
-                  <div className="flex flex-col items-center text-center">
-                    <Car size={24} className="mb-2 text-yellow-300" />
+                  <div>
+                    <Car className="mx-auto mb-2" />
                     <p className="font-bold">חניה</p>
                     <p className="text-white/80">חינם במקום</p>
                   </div>
@@ -347,7 +285,6 @@ export default function PropertyPage() {
 
           </div>
 
-          {/* Right Column - Booking Card */}
           <div className="lg:col-span-1">
             <div className="sticky top-24 bg-white rounded-3xl p-8 shadow-2xl border border-gray-100">
               <div className="text-center mb-6">
@@ -365,22 +302,11 @@ export default function PropertyPage() {
                 <span className="text-gray-600 font-bold mr-2">{property.rating}</span>
               </div>
 
-              <div className="space-y-4 mb-8">
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-600">כניסה</span>
-                  <span className="font-bold text-gray-900">{property.checkIn}</span>
-                </div>
-                <div className="flex items-center justify-between text-sm">
-                  <span className="text-gray-600">יציאה</span>
-                  <span className="font-bold text-gray-900">{property.checkOut}</span>
-                </div>
-              </div>
-
               <a
                 href={property.affiliateUrl}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="block w-full bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 hover:from-cyan-600 hover:via-blue-700 hover:to-purple-700 text-white font-bold py-5 px-6 rounded-2xl text-xl text-center transition-all transform hover:scale-105 shadow-lg hover:shadow-2xl mb-4"
+                className="block w-full bg-gradient-to-r from-cyan-500 via-blue-600 to-purple-600 hover:from-cyan-600 hover:via-blue-700 hover:to-purple-700 text-white font-bold py-5 px-6 rounded-2xl text-xl text-center transition-all transform hover:scale-105 shadow-lg mb-4"
               >
                 <div className="flex items-center justify-center gap-2">
                   <span>הזמן עכשיו באתר השותף</span>
@@ -408,7 +334,7 @@ export default function PropertyPage() {
                   className="flex items-center justify-center gap-3 w-full bg-green-500 hover:bg-green-600 text-white font-bold py-3 px-6 rounded-xl transition-all"
                 >
                   <MessageCircle size={20} />
-                  <span>שלח הודעה בWhatsApp</span>
+                  <span>WhatsApp</span>
                 </a>
               </div>
 
@@ -431,14 +357,13 @@ export default function PropertyPage() {
         </div>
       </div>
 
-      {/* Footer CTA */}
       <div className="bg-gradient-to-r from-blue-600 via-purple-600 to-pink-600 py-16">
         <div className="container mx-auto px-6 text-center">
           <h2 className="text-4xl font-bold text-white mb-6">
             מוכנים לחופשה עם נוף לים? 🌊
           </h2>
           <p className="text-xl text-white/90 mb-8 max-w-2xl mx-auto">
-            הזמינו עכשיו את דירת החלומות שלכם בנתניה ותיהנו מחופשה בלתי נשכחת
+            הזמינו עכשיו את דירת החלומות שלכם בנתניה
           </p>
           <a
             href={property.affiliateUrl}
