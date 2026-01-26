@@ -35,3 +35,34 @@ body {
 .no-select {
   user-select: none;
 }
+/* --- LIQUID TRANSITIONS --- */
+
+::view-transition-old(root) {
+  animation: 0.4s cubic-bezier(0.4, 0, 0.2, 1) both fade-out,
+             0.4s cubic-bezier(0.4, 0, 0.2, 1) both scale-down;
+}
+
+::view-transition-new(root) {
+  animation: 0.4s cubic-bezier(0.4, 0, 0.2, 1) both fade-in,
+             0.4s cubic-bezier(0.4, 0, 0.2, 1) both scale-up;
+}
+
+@keyframes fade-out {
+  from { opacity: 1; filter: blur(0px); }
+  to { opacity: 0; filter: blur(10px); }
+}
+
+@keyframes fade-in {
+  from { opacity: 0; filter: blur(10px); }
+  to { opacity: 1; filter: blur(0px); }
+}
+
+@keyframes scale-down {
+  from { transform: scale(1); }
+  to { transform: scale(0.95); }
+}
+
+@keyframes scale-up {
+  from { transform: scale(1.05); }
+  to { transform: scale(1); }
+}

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next';
 import { Inter } from 'next/font/google';
+import { ViewTransitions } from 'next-view-transitions';
 import './globals.css';
 import AtmosphereBackground from '@/components/AtmosphereBackground';
 import SuperCloset from '@/components/SuperCloset';
@@ -18,17 +19,19 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className="dark cursor-none"> 
-      <body className={`${inter.className} bg-black text-white antialiased overflow-x-hidden min-h-screen`}>
-        <CustomCursor />
-        <AtmosphereBackground />
-        
-        <main className="relative z-10">
-          {children}
-        </main>
+    <ViewTransitions>
+      <html lang="en" className="dark cursor-none"> 
+        <body className={`${inter.className} bg-black text-white antialiased overflow-x-hidden min-h-screen`}>
+          <CustomCursor />
+          <AtmosphereBackground />
+          
+          <main className="relative z-10">
+            {children}
+          </main>
 
-        <SuperCloset />
-      </body>
-    </html>
+          <SuperCloset />
+        </body>
+      </html>
+    </ViewTransitions>
   );
 }
