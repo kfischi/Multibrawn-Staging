@@ -2,7 +2,7 @@ import React from 'react';
 import { venues } from '@/data/venues';
 import { notFound } from 'next/navigation';
 import { Link } from 'next-view-transitions';
-import { ArrowLeft, Check, Calendar } from 'lucide-react';
+import { ArrowLeft, Check, ExternalLink, ShieldCheck, MapPin } from 'lucide-react';
 
 export default async function VenueDetailsPage({
   params,
@@ -18,6 +18,7 @@ export default async function VenueDetailsPage({
 
   return (
     <div className="min-h-screen bg-brand-dark text-white font-sans">
+      {/* Hero Image */}
       <div className="h-[50vh] relative">
         <div 
           className="absolute inset-0 bg-cover bg-center"
@@ -33,16 +34,20 @@ export default async function VenueDetailsPage({
       <div className="max-w-6xl mx-auto px-6 -mt-32 relative z-10 pb-20">
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-12">
           
+          {/* Main Content */}
           <div className="lg:col-span-2 space-y-8">
             <div>
               <h1 className="text-5xl md:text-7xl font-cyber mb-4 text-glow">{venue.title}</h1>
               <div className="flex items-center text-xl text-neutral-400">
                 <MapPin className="mr-2 text-brand-neon" /> {venue.location}
               </div>
+              <div className="flex items-center text-sm text-neutral-500 mt-2">
+                <ShieldCheck className="mr-2 text-brand-neon" size={16} /> Verified by Multibrawn
+              </div>
             </div>
 
             <div className="glass-panel p-8 rounded-2xl">
-              <h3 className="text-2xl font-bold mb-4 text-brand-neon">ABOUT THE SPACE</h3>
+              <h3 className="text-2xl font-bold mb-4 text-brand-neon">LUXURY SPECS</h3>
               <p className="text-lg text-neutral-300 leading-relaxed">
                 {venue.description}
               </p>
@@ -58,18 +63,26 @@ export default async function VenueDetailsPage({
             </div>
           </div>
 
+          {/* Booking Sidebar */}
           <div className="lg:col-span-1">
             <div className="glass-panel p-8 rounded-2xl sticky top-8 border-t-4 border-brand-neon">
               <div className="text-sm text-neutral-500 font-mono mb-2">STARTING PRICE</div>
               <div className="text-4xl font-bold mb-8 font-cyber">{venue.price}</div>
               
               <div className="space-y-4">
-                <button className="w-full py-4 bg-brand-neon text-black font-bold text-lg rounded-xl hover:bg-white transition-all shadow-[0_0_20px_rgba(0,243,255,0.3)]">
-                  BOOK VIEWING
-                </button>
-                <button className="w-full py-4 border border-white/20 text-white font-bold rounded-xl hover:bg-white/10 transition-colors flex items-center justify-center">
-                  <Calendar size={20} className="mr-2" /> CHECK AVAILABILITY
-                </button>
+                {/* Affiliate Link Button */}
+                <a 
+                  href={venue.affiliateUrl || '#'} 
+                  target="_blank" 
+                  rel="noopener noreferrer"
+                  className="w-full py-4 bg-brand-neon text-black font-bold text-lg rounded-xl hover:bg-white transition-all shadow-[0_0_20px_rgba(0,243,255,0.3)] flex items-center justify-center"
+                >
+                  BOOK NOW <ExternalLink size={20} className="ml-2" />
+                </a>
+                
+                <div className="text-center text-xs text-neutral-400 mt-4">
+                  You will be redirected to our partner site to complete the secure booking.
+                </div>
               </div>
 
               <div className="mt-8 pt-8 border-t border-white/10 text-center text-sm text-neutral-500">
