@@ -1,14 +1,16 @@
 import type { Metadata } from "next";
+import Header from "@/components/layout/Header/Header";
+import Footer from "@/components/layout/Footer/Footer";
 import "./globals.css";
 
 export const metadata: Metadata = {
-  title: "MULTIBRAWN - Ultra Instinct | חוויות נופש יוקרתיות",
-  description: "חוויית נופש יוקרתית ברמה שמעולם לא חווית. צימרים, וילות, מלונות בוטיק ואירועים אקסקלוסיביים.",
-  keywords: ["צימרים", "וילות", "נופש", "מלונות בוטיק", "אירועים", "multibrawn"],
+  title: "MULTIBRAWN - מולטיבראון | צימרים, וילות ונכסי נופש יוקרתיים",
+  description: "מולטיבראון - מומחים למציאת חופשה מושלמת. 9+ שנות ניסיון בהשכרת צימרים, וילות, מלונות בוטיק ואירועים יוקרתיים. שירות אישי, מחירים הוגנים, ומגוון עצום של נכסים.",
+  keywords: ["צימרים", "וילות", "נופש", "מלונות בוטיק", "אירועים", "multibrawn", "מולטיבראון", "חופשה"],
   authors: [{ name: "MULTIBRAWN" }],
   openGraph: {
-    title: "MULTIBRAWN - Ultra Instinct",
-    description: "חוויית נופש יוקרתית ברמה שמעולם לא חווית",
+    title: "MULTIBRAWN - מציאת חופשה מושלמת",
+    description: "9+ שנות ניסיון במציאת מקומות נופש יוקרתיים. צימרים, וילות, ומלונות בוטיק.",
     type: "website",
     locale: "he_IL",
     images: [
@@ -22,8 +24,8 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
-    title: "MULTIBRAWN - Ultra Instinct",
-    description: "חוויית נופש יוקרתית ברמה שמעולם לא חווית",
+    title: "MULTIBRAWN - מציאת חופשה מושלמת",
+    description: "9+ שנות ניסיון במציאת מקומות נופש יוקרתיים",
   },
 };
 
@@ -35,7 +37,11 @@ export default function RootLayout({
   return (
     <html lang="he" dir="rtl">
       <body className="antialiased">
-        {children}
+        <Header />
+        <main className="pt-20">
+          {children}
+        </main>
+        <Footer />
       </body>
     </html>
   );
