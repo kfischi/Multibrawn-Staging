@@ -2,262 +2,462 @@
 @tailwind components;
 @tailwind utilities;
 
-/* =========================================
-   1. ROOT & BASE SETTINGS
-   ========================================= */
+/* ============================================
+   WORLD CLASS CSS - MULTIBRAWN
+   Level: Award-Winning Design
+   ============================================ */
+
+/* ROOT VARIABLES */
 :root {
   --foreground-rgb: 255, 255, 255;
   --background-start-rgb: 0, 0, 0;
   --background-end-rgb: 0, 0, 0;
+  
+  /* Premium Spacing */
+  --space-unit: 8px;
+  --space-xs: calc(var(--space-unit) * 1);
+  --space-sm: calc(var(--space-unit) * 2);
+  --space-md: calc(var(--space-unit) * 3);
+  --space-lg: calc(var(--space-unit) * 4);
+  --space-xl: calc(var(--space-unit) * 6);
+  --space-2xl: calc(var(--space-unit) * 8);
+  
+  /* Transitions */
+  --transition-fast: 150ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-base: 300ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slow: 500ms cubic-bezier(0.4, 0, 0.2, 1);
+  --transition-slower: 700ms cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+/* BASE STYLES */
+* {
+  box-sizing: border-box;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+html {
+  scroll-behavior: smooth;
 }
 
 body {
   color: rgb(var(--foreground-rgb));
-  background: black;
-  overflow-x: hidden; /* מונע גלילה אופקית */
-  -webkit-font-smoothing: antialiased; /* טקסט חד יותר */
+  background: #000000;
+  overflow-x: hidden;
+  font-feature-settings: "ss01", "ss02", "cv01", "cv11";
 }
 
-/* העלמת פס הגלילה (Scrollbar) למראה אפליקטיבי נקי */
+/* Premium Scrollbar */
 ::-webkit-scrollbar {
-  width: 0px;
-  background: transparent;
+  width: 6px;
+  height: 6px;
 }
 
-.no-select {
-  user-select: none;
+::-webkit-scrollbar-track {
+  background: rgba(255, 255, 255, 0.02);
 }
 
-.clickable {
-  cursor: none;
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(180deg, #06b6d4, #8b5cf6);
+  border-radius: 10px;
+  transition: background var(--transition-base);
 }
 
-/* =========================================
-   2. CINEMATIC HERO SECTION (The "Wow" Effect)
-   ========================================= */
-.hero-section {
-  position: relative;
-  width: 100%;
-  height: 100vh; /* גובה מסך מלא */
-  overflow: hidden;
-  display: flex;
-  align-items: center;
-  justify-content: center;
+::-webkit-scrollbar-thumb:hover {
+  background: linear-gradient(180deg, #0891b2, #7c3aed);
 }
 
-.video-bg {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  z-index: 0;
-  opacity: 0.9; /* נותן טיפה מהשחור של הרקע לעבור */
-}
-
-/* שכבת ההצללה היוקרתית */
-.hero-overlay {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: linear-gradient(
-    to bottom,
-    rgba(0, 0, 0, 0.3) 0%,
-    rgba(0, 0, 0, 0.5) 50%,
-    rgba(0, 0, 0, 0.9) 100%
-  );
-  z-index: 1;
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  text-align: center;
-  padding: 0 20px;
-}
-
-/* תוכן ההירו */
-.hero-content {
-  position: relative;
-  z-index: 2;
-  max-width: 1000px;
-  animation: fadeUp 1.5s cubic-bezier(0.2, 0.8, 0.2, 1); /* אנימציה חלקה יותר */
-}
-
-.hero-title {
-  font-size: clamp(3rem, 8vw, 6rem); /* רספונסיבי: גדל עם המסך */
-  font-weight: 900;
-  color: #ffffff;
-  margin-bottom: 1rem;
-  line-height: 1.1;
-  letter-spacing: 2px;
-  /* ירושה מעיצוב הסייבר שלך */
-  font-family: var(--font-orbitron, sans-serif);
-  text-transform: uppercase;
-  text-shadow: 0 0 20px rgba(0, 243, 255, 0.4), 0 0 40px rgba(0, 0, 0, 0.8);
-}
-
-.hero-subtitle {
-  font-size: clamp(1.2rem, 3vw, 1.8rem);
-  color: #e0e0e0;
-  font-weight: 300;
-  margin-bottom: 3rem;
-  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
-  max-width: 800px;
-  margin-left: auto;
-  margin-right: auto;
-}
-
-/* כפתורים משודרגים */
-.hero-btns {
-  display: flex;
-  gap: 20px;
-  justify-content: center;
-  flex-wrap: wrap;
-}
-
-.btn-primary {
-  padding: 16px 40px;
-  font-size: 1.1rem;
-  font-weight: bold;
+/* Selection */
+::selection {
+  background: #06b6d4;
   color: #000;
-  background: #fff;
-  border-radius: 50px; /* עגול מלא */
-  text-decoration: none;
-  transition: all 0.4s cubic-bezier(0.2, 0.8, 0.2, 1);
-  box-shadow: 0 0 15px rgba(255, 255, 255, 0.3);
+  text-shadow: none;
 }
 
-.btn-primary:hover {
-  transform: translateY(-5px) scale(1.05);
-  box-shadow: 0 0 30px rgba(255, 255, 255, 0.6);
+::-moz-selection {
+  background: #06b6d4;
+  color: #000;
+  text-shadow: none;
 }
 
-.btn-glass {
-  padding: 16px 40px;
-  font-size: 1.1rem;
-  font-weight: bold;
-  color: #fff;
-  background: rgba(255, 255, 255, 0.05);
-  border: 1px solid rgba(255, 255, 255, 0.2);
-  backdrop-filter: blur(10px);
-  -webkit-backdrop-filter: blur(10px);
-  border-radius: 50px;
-  text-decoration: none;
-  transition: all 0.4s ease;
+/* ============================================
+   ANIMATIONS - WORLD CLASS LEVEL
+   ============================================ */
+
+/* Fade In Delayed */
+@keyframes fade-in-delayed {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
 }
 
-.btn-glass:hover {
-  background: rgba(255, 255, 255, 0.15);
-  border-color: rgba(255, 255, 255, 0.8);
-  transform: translateY(-5px);
-  box-shadow: 0 0 20px rgba(0, 243, 255, 0.2);
+.animate-fade-in-delayed {
+  animation: fade-in-delayed 1s ease-out 0.3s both;
 }
 
-/* =========================================
-   3. CYBER AESTHETICS & UI COMPONENTS
-   ========================================= */
-
-/* טקסט כותרות עתידני */
-.font-cyber {
-  font-family: var(--font-orbitron);
-  letter-spacing: 0.1em;
-  text-transform: uppercase;
+/* Slide Up */
+@keyframes slide-up {
+  from {
+    opacity: 0;
+    transform: translateY(40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
-/* אפקט זוהר לטקסט */
-.text-glow {
-  text-shadow: 0 0 10px rgba(0, 243, 255, 0.5),
-               0 0 20px rgba(0, 243, 255, 0.3);
+.animate-slide-up {
+  animation: slide-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
 }
 
-/* פאנל זכוכית כהה */
-.glass-panel {
-  background: rgba(10, 10, 10, 0.6);
-  backdrop-filter: blur(12px);
-  -webkit-backdrop-filter: blur(12px);
+/* Fade In Up */
+@keyframes fade-in-up {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+    filter: blur(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+    filter: blur(0);
+  }
+}
+
+.animate-fade-in-up {
+  animation: fade-in-up 0.8s cubic-bezier(0.16, 1, 0.3, 1) both;
+}
+
+/* Gradient Animation */
+@keyframes gradient {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+.animate-gradient {
+  background-size: 200% 200%;
+  animation: gradient 8s ease infinite;
+}
+
+/* Float Animation */
+@keyframes float {
+  0%, 100% {
+    transform: translate(0, 0) scale(1);
+  }
+  33% {
+    transform: translate(30px, -30px) scale(1.05);
+  }
+  66% {
+    transform: translate(-20px, 20px) scale(0.95);
+  }
+}
+
+.animate-float {
+  animation: float 20s ease-in-out infinite;
+}
+
+.animate-float-delayed {
+  animation: float 25s ease-in-out infinite;
+  animation-delay: 5s;
+}
+
+/* Pulse Slow */
+@keyframes pulse-slow {
+  0%, 100% {
+    opacity: 0.15;
+    transform: scale(1);
+  }
+  50% {
+    opacity: 0.25;
+    transform: scale(1.05);
+  }
+}
+
+.animate-pulse-slow {
+  animation: pulse-slow 8s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+/* Bounce Slow */
+@keyframes bounce-slow {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+.animate-bounce-slow {
+  animation: bounce-slow 3s ease-in-out infinite;
+}
+
+/* Scroll Indicator */
+@keyframes scroll {
+  0% {
+    opacity: 0;
+    transform: translateY(0);
+  }
+  50% {
+    opacity: 1;
+  }
+  100% {
+    opacity: 0;
+    transform: translateY(16px);
+  }
+}
+
+.animate-scroll {
+  animation: scroll 2s ease-in-out infinite;
+}
+
+/* Bounce X */
+@keyframes bounce-x {
+  0%, 100% {
+    transform: translateX(0);
+  }
+  50% {
+    transform: translateX(6px);
+  }
+}
+
+.animate-bounce-x {
+  animation: bounce-x 1s ease-in-out infinite;
+}
+
+/* Shimmer Effect */
+@keyframes shimmer {
+  0% {
+    background-position: -1000px 0;
+  }
+  100% {
+    background-position: 1000px 0;
+  }
+}
+
+.animate-shimmer {
+  animation: shimmer 3s linear infinite;
+  background: linear-gradient(
+    90deg,
+    transparent 0%,
+    rgba(255, 255, 255, 0.05) 50%,
+    transparent 100%
+  );
+  background-size: 1000px 100%;
+}
+
+/* ============================================
+   CATEGORY CARDS - SCROLL REVEAL
+   ============================================ */
+
+.category-card {
+  opacity: 0;
+  transform: translateY(40px) scale(0.95);
+  transition: all 0.8s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.category-card.animate-in {
+  opacity: 1;
+  transform: translateY(0) scale(1);
+}
+
+.category-card:nth-child(1) {
+  transition-delay: 0ms;
+}
+
+.category-card:nth-child(2) {
+  transition-delay: 100ms;
+}
+
+.category-card:nth-child(3) {
+  transition-delay: 200ms;
+}
+
+.category-card:nth-child(4) {
+  transition-delay: 300ms;
+}
+
+/* ============================================
+   GRADIENT UTILITIES
+   ============================================ */
+
+.bg-gradient-radial {
+  background: radial-gradient(circle at center, var(--tw-gradient-stops));
+}
+
+/* ============================================
+   GLASSMORPHISM - PREMIUM
+   ============================================ */
+
+.glass-premium {
+  background: rgba(255, 255, 255, 0.03);
+  backdrop-filter: blur(40px) saturate(180%);
+  -webkit-backdrop-filter: blur(40px) saturate(180%);
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 
-/* רקע רשת עדינה */
-.bg-grid {
-  background-size: 40px 40px;
-  background-image: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.03) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.03) 1px, transparent 1px);
+.glass-strong {
+  background: rgba(255, 255, 255, 0.08);
+  backdrop-filter: blur(50px) saturate(200%);
+  -webkit-backdrop-filter: blur(50px) saturate(200%);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
+
+/* ============================================
+   TEXT EFFECTS
+   ============================================ */
+
+.text-shadow-premium {
+  text-shadow: 
+    0 2px 10px rgba(0, 0, 0, 0.5),
+    0 4px 20px rgba(0, 0, 0, 0.3),
+    0 8px 40px rgba(0, 0, 0, 0.2);
+}
+
+.text-shadow-glow {
+  text-shadow: 
+    0 0 20px currentColor,
+    0 0 40px currentColor,
+    0 0 60px currentColor;
+}
+
+/* ============================================
+   HOVER EFFECTS - ADVANCED
+   ============================================ */
+
+.hover-lift {
+  transition: transform var(--transition-slow), box-shadow var(--transition-slow);
+}
+
+.hover-lift:hover {
+  transform: translateY(-12px) scale(1.02);
+  box-shadow: 
+    0 30px 60px rgba(0, 0, 0, 0.4),
+    0 0 0 1px rgba(255, 255, 255, 0.05) inset;
+}
+
+.hover-glow-cyan:hover {
+  box-shadow: 
+    0 0 30px rgba(6, 182, 212, 0.4),
+    0 0 60px rgba(6, 182, 212, 0.2);
+}
+
+.hover-glow-purple:hover {
+  box-shadow: 
+    0 0 30px rgba(139, 92, 246, 0.4),
+    0 0 60px rgba(139, 92, 246, 0.2);
+}
+
+/* ============================================
+   PERSPECTIVE & 3D
+   ============================================ */
 
 .perspective-1000 {
   perspective: 1000px;
 }
 
-/* =========================================
-   4. ANIMATIONS & TRANSITIONS
-   ========================================= */
-
-/* Hero Animation */
-@keyframes fadeUp {
-  from { opacity: 0; transform: translateY(60px); filter: blur(10px); }
-  to { opacity: 1; transform: translateY(0); filter: blur(0); }
+.transform-3d {
+  transform-style: preserve-3d;
 }
 
-/* Liquid View Transitions */
-::view-transition-old(root) {
-  animation: 0.4s cubic-bezier(0.4, 0, 0.2, 1) both fade-out,
-             0.4s cubic-bezier(0.4, 0, 0.2, 1) both scale-down;
+.backface-hidden {
+  backface-visibility: hidden;
 }
 
-::view-transition-new(root) {
-  animation: 0.4s cubic-bezier(0.4, 0, 0.2, 1) both fade-in,
-             0.4s cubic-bezier(0.4, 0, 0.2, 1) both scale-up;
+/* ============================================
+   RESPONSIVE BREAKPOINTS
+   ============================================ */
+
+@media (max-width: 768px) {
+  .category-card {
+    height: 450px !important;
+  }
+  
+  .hero-title {
+    font-size: clamp(2.5rem, 12vw, 4rem) !important;
+  }
 }
 
-@keyframes fade-out {
-  from { opacity: 1; filter: blur(0px); }
-  to { opacity: 0; filter: blur(10px); }
+@media (max-width: 480px) {
+  .category-card {
+    height: 420px !important;
+  }
 }
 
-@keyframes fade-in {
-  from { opacity: 0; filter: blur(10px); }
-  to { opacity: 1; filter: blur(0px); }
+/* ============================================
+   PERFORMANCE OPTIMIZATIONS
+   ============================================ */
+
+.will-change-transform {
+  will-change: transform;
 }
 
-@keyframes scale-down {
-  from { transform: scale(1); }
-  to { transform: scale(0.95); }
+.will-change-opacity {
+  will-change: opacity;
 }
 
-@keyframes scale-up {
-  from { transform: scale(1.05); }
-  to { transform: scale(1); }
-}
-/* --- תיקון דחוף לתפריט ולתוכן --- */
-
-/* 1. מכריח את התפריט להיות הכי עליון */
-/* (מתאים לרוב הסוגים של תפריטים: nav, header, או class של navbar) */
-nav, header, .navbar {
-  position: fixed;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: 9999 !important; /* המספר הכי גבוה שאפשר */
+.gpu-accelerated {
+  transform: translateZ(0);
+  backface-visibility: hidden;
+  perspective: 1000px;
 }
 
-/* 2. וידוא שהתוכן בהירו (הטקסט והכפתורים) מעל הוידאו */
-.hero-content {
-  position: relative;
-  z-index: 50 !important; /* מעל הוידאו וההצללה */
-  opacity: 1 !important;  /* לביטול מצב שהאנימציה מסתירה אותו */
+/* ============================================
+   ACCESSIBILITY
+   ============================================ */
+
+.focus-visible:focus {
+  outline: 2px solid #06b6d4;
+  outline-offset: 2px;
 }
 
-/* 3. וידוא שהוידאו נשאר ברקע */
-.hero-section {
-  position: relative;
-  z-index: 1;
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  margin: -1px;
+  overflow: hidden;
+  clip: rect(0, 0, 0, 0);
+  white-space: nowrap;
+  border-width: 0;
 }
 
-.video-bg {
-  z-index: -1 !important; /* דוחף את הוידאו אחורה */
+/* ============================================
+   REDUCED MOTION
+   ============================================ */
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+  }
+}
+
+/* ============================================
+   PRINT STYLES
+   ============================================ */
+
+@media print {
+  body {
+    background: white;
+    color: black;
+  }
+  
+  .no-print {
+    display: none !important;
+  }
 }
